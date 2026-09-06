@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Individual Part Iteration — Design Iteration Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/report-style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+<main id="content-root" class="report-content"></main>
+
+<!-- Replace with the exact three.js / OrbitControls / STLLoader tags from your main index.html -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<script src="../cad_viewer.js"></script>
+<script src="js/report-common.js"></script>
+<script>
+    renderReportHeader('individual');
+
+    renderReportContent('content-root', [
+        { type: 'heading', text: 'Individual Part Iteration' },
+        {
+            type: 'text',
+            html: `<p>Document each part's design history here — early versions, why they changed,
+            and what testing or constraints drove each revision. Duplicate the block pairs below
+            for every part you want to document.</p>`
+        },
+
+        { type: 'heading', text: 'Part: V4 Bar (Motor Version)' },
+        {
+            type: 'image-text',
+            src: 'images/v4-bar-v1-sketch.png',
+            caption: 'Version 1 sketch/concept',
+            imageSide: 'left',
+            text: `<p>Describe the first iteration of this part: initial requirements, materials,
+            and any early failures or limitations that led to a redesign.</p>`
+        },
+        {
+            type: 'viewer',
+            label: 'Current Version (3D)',
+            stlPath: '../cad_data/V4_Bar_Design_with_Motor.stl',
+            colorSeed: 3
+        }
+    ]);
+</script>
+</body>
+</html>

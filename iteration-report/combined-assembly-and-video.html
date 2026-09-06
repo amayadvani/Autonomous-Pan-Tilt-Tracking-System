@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Combined Assembly and Video — Design Iteration Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/report-style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+<main id="content-root" class="report-content"></main>
+
+<!-- Replace with the exact three.js / OrbitControls / STLLoader tags from your main index.html -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<script src="../cad_viewer.js"></script>
+<script src="js/report-common.js"></script>
+<script>
+    renderReportHeader('combined');
+
+    renderReportContent('content-root', [
+        { type: 'heading', text: 'Combined Assembly and Video' },
+        {
+            type: 'text',
+            html: `<p>Summarize how the individual parts come together into the full assembly,
+            and embed or link the demo video below.</p>`
+        },
+        {
+            type: 'image',
+            src: 'images/full-assembly-photo.jpg',
+            caption: 'Fully assembled Pan-Tilt Tracking System',
+            align: 'full'
+        },
+        {
+            type: 'text',
+            html: `<p><strong>Demo video:</strong> paste a YouTube/Drive embed &lt;iframe&gt; here,
+            or replace this block with an &lt;video&gt; tag pointing to a file in the images/ folder.</p>`
+        },
+        {
+            type: 'viewer',
+            label: 'Full Assembly (3D)',
+            stlPath: '../cad_data/V4_Bar_Assembly.stl',
+            colorSeed: 2
+        }
+    ]);
+</script>
+</body>
+</html>

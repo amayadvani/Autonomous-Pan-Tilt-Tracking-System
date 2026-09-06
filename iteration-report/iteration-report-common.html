@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purpose and Data Analysis — Design Iteration Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/report-style.css">
+</head>
+<body>
+
+<header id="site-header"></header>
+<main id="content-root" class="report-content"></main>
+
+<!-- IMPORTANT: replace these three lines with the EXACT three.js / OrbitControls /
+     STLLoader <script> tags copied from your main index.html, so the version matches
+     what cad_viewer.js was tested against. -->
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+
+<script src="../cad_viewer.js"></script>
+<script src="js/report-common.js"></script>
+<script>
+    renderReportHeader('purpose');
+
+    renderReportContent('content-root', [
+        { type: 'heading', text: 'Purpose and Data Analysis' },
+        {
+            type: 'text',
+            html: `<p>Describe the goal of the Autonomous Pan-Tilt Tracking System here: what problem
+            it solves, the signal strength data you collected, and how that data shaped your design
+            requirements.</p>`
+        },
+        {
+            type: 'image-text',
+            src: 'images/signal-strength-plot.png',
+            caption: 'Example: signal strength vs. angle plot',
+            imageSide: 'left',
+            text: `<p>Add your analysis of the plotted data here — trends you noticed, how they
+            informed the tracking algorithm or mechanical design, and any conclusions drawn from
+            the raw data collection.</p>`
+        },
+        {
+            type: 'viewer',
+            label: 'Example: Referenced CAD Model',
+            stlPath: '../cad_data/Translated_Lazy_Suzan.stl',
+            colorSeed: 1
+        }
+    ]);
+</script>
+</body>
+</html>

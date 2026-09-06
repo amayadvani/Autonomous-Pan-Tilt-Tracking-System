@@ -1,0 +1,214 @@
+:root {
+    --bg-darker: #0d0c16;
+    --bg-dark: #1a1a2e;
+    --card-bg: #1b1930;
+    --card-border: rgba(242, 168, 101, 0.18);
+    --accent: #f2a865;
+    --accent-soft: #f7c896;
+    --text-light: #eef0fa;
+    --text-muted: #9a9db3;
+    --font-heading: 'Poppins', 'Quicksand', sans-serif;
+    --font-body: 'Poppins', 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 0%, #211f3a 0%, var(--bg-dark) 45%, var(--bg-darker) 100%);
+    background-attachment: fixed;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* ---------- Header / Nav (constant across all pages) ---------- */
+
+#site-header {
+    padding: 48px 24px 28px;
+    text-align: center;
+}
+
+.report-title-rule {
+    width: 220px;
+    height: 2px;
+    margin: 0 auto 24px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.report-title {
+    margin: 0 0 8px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2.6rem;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+.report-subtitle {
+    margin: 0 0 28px;
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.report-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.report-nav-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.2s ease;
+}
+
+.report-nav-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent-soft);
+    box-shadow: 0 0 14px rgba(242, 168, 101, 0.25);
+}
+
+.report-nav-btn.active {
+    background: var(--accent);
+    color: #1a1408;
+    border-color: var(--accent);
+    font-weight: 600;
+}
+
+/* ---------- Content area ---------- */
+
+.report-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 24px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.report-block {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px 32px;
+}
+
+.report-block h2 {
+    margin: 0;
+    font-family: var(--font-heading);
+    color: var(--accent-soft);
+    font-size: 1.5rem;
+}
+
+.report-block-text p {
+    margin: 0 0 12px;
+    color: var(--text-light);
+}
+
+.report-block-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Images ---------- */
+
+.report-figure {
+    margin: 0;
+}
+
+.report-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid var(--card-border);
+}
+
+.report-figure figcaption {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.report-figure.full img {
+    max-height: 520px;
+    object-fit: contain;
+    background: var(--bg-darker);
+}
+
+/* ---------- Image + text side by side ---------- */
+
+.report-split {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.report-split .report-figure {
+    flex: 1 1 360px;
+}
+
+.report-split-text {
+    flex: 1 1 360px;
+    color: var(--text-light);
+}
+
+.report-split-text p {
+    margin: 0 0 12px;
+}
+
+.report-split.image-right {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 720px) {
+    .report-split, .report-split.image-right {
+        flex-direction: column;
+    }
+}
+
+/* ---------- 3D viewer blocks ---------- */
+
+.report-viewer-label {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.report-viewer-canvas {
+    width: 100%;
+    height: 460px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--bg-darker);
+    border: 1px solid var(--card-border);
+}
+
+@media (max-width: 600px) {
+    .report-title {
+        font-size: 1.9rem;
+    }
+    .report-block {
+        padding: 20px;
+    }
+    .report-viewer-canvas {
+        height: 320px;
+    }
+}
