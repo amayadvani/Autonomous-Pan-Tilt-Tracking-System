@@ -26,25 +26,34 @@
         { type: 'page-title', text: 'Purpose and Data Analysis' },
         {
             type: 'text',
-            html: `<p>Describe the goal of the Autonomous Pan-Tilt Tracking System here: what problem
-            it solves, the signal strength data you collected, and how that data shaped your design
-            requirements.</p>`
+            html: `<p>Purpose: 
+            The goal of this project was to create a simulation of a satellite tracking 
+            system. Many real world satilites have a multi-axis mechanical system to pan-tilt their 
+            recievers for better signal strength. Therefore the challenge was to design an effective 
+            tracking mechanism that would adjust to the satellite's "orbit" in simplified circular motion.</p>`
         },
         {
             type: 'image-text',
-            src: 'images/signal-strength-plot.png',
-            caption: 'Example: signal strength vs. angle plot',
+            src: '../assembled/gimbal.jpeg',
+            caption: 'Final Servo Gimabal with Range Sensor',
             imageSide: 'left',
-            text: `<p>Add your analysis of the plotted data here — trends you noticed, how they
-            informed the tracking algorithm or mechanical design, and any conclusions drawn from
-            the raw data collection.</p>`
+            text: `<p>Constraints: 
+            Initially this project was planned to utilize RF signal transmitter and receiver, yet 
+            the constraint of my resources, namely the size of the 3-D printer, gave me an approximate maximum sensing 
+            distance of 300 mm. The sensor used in the final design was a simple ultrasonic range finder, where I simulate 
+            distance from the satilite as signal strength. 
+            
+            This project took about 65 hours in total. If I could make a 
+            second rendition, I would enlarge the sensing area significantly and implement Radio Frequency transmission through 
+            printing mutliple interlocking parts of a track for the satilite to travel around 12 feet.</p>`
         },
         {
             type: 'viewer',
-            label: 'Example: Referenced CAD Model',
-            stlPath: '../assembled/YourFile.stl',
+            label: 'Final System Assembly',
+            stlPath: '../assembled/assembled/Autonomous-Pan-Tilt-Tracking-System-Assembly.stl',
             colorSeed: 1
         }
+        
     ]);
 </script>
 </body>
