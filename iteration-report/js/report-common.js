@@ -1,3 +1,12 @@
+// ============================================================
+// Shared logic for the Design Iteration and Signal Strength Report
+// - Builds the constant header/title/nav on every page (with a
+//   gold rule line above AND below the title block)
+// - Renders flexible content blocks: page-title, heading, text,
+//   image, image-text, and 3D "viewer" blocks (reuses CADViewer
+//   from cad_viewer.js, which must be loaded BEFORE this file).
+// ============================================================
+
 const REPORT_PAGES = [
     { id: 'purpose', label: 'Purpose and Data Analysis', href: 'index.html' },
     { id: 'combined', label: 'Combined Assembly and Video', href: 'combined-assembly-and-video.html' },
@@ -18,12 +27,14 @@ function renderReportHeader(activeId) {
         <div class="report-title-rule"></div>
         <h1 class="report-title">Design Iteration and Signal Strength Report</h1>
         <p class="report-subtitle">Autonomous Pan-Tilt Tracking System by Amay Advani</p>
+        <div class="report-title-rule-bottom"></div>
         <nav class="report-nav">${navHtml}</nav>
     `;
 }
 
 // blocks: array of objects, each one of:
-//   { type: 'heading', text: '...' }
+//   { type: 'page-title', text: '...' }              -> plain centered title, NOT a card (use once, matching the nav button label)
+//   { type: 'heading', text: '...' }                  -> sub-section heading, shown inside a card
 //   { type: 'text', html: '<p>...</p>' }
 //   { type: 'image', src, caption, align: 'full' (optional) }
 //   { type: 'image-text', src, caption, text: '<p>...</p>', imageSide: 'left'|'right' }
@@ -34,6 +45,15 @@ function renderReportContent(rootId, blocks) {
     root.innerHTML = '';
 
     blocks.forEach((block, idx) => {
+
+        if (block.type === 'page-title') {
+            const titleEl = document.createElement('h2');
+            titleEl.className = 'report-page-title';
+            titleEl.textContent = block.text;
+            root.appendChild(titleEl);
+            return;
+        }
+
         const section = document.createElement('section');
         section.className = 'report-block report-block-' + block.type;
 
@@ -72,7 +92,6 @@ function renderReportContent(rootId, blocks) {
                 <div id="${viewerId}" class="report-viewer-canvas"></div>`;
             root.appendChild(section);
 
-            // Defer until the container has real dimensions in the DOM.
             setTimeout(() => {
                 const container = document.getElementById(viewerId);
                 if (container && window.CADViewer) {

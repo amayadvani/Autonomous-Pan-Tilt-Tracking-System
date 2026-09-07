@@ -13,7 +13,6 @@
 <header id="site-header"></header>
 <main id="content-root" class="report-content"></main>
 
-<!-- Replace with the exact three.js / OrbitControls / STLLoader tags from your main index.html -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
@@ -24,7 +23,7 @@
     renderReportHeader('logic');
 
     renderReportContent('content-root', [
-        { type: 'heading', text: 'Logic and Code Debugging' },
+        { type: 'page-title', text: 'Logic and Code Debugging' },
         {
             type: 'text',
             html: `<p>Document the control logic and any debugging process for the tracking
@@ -40,7 +39,7 @@
         {
             type: 'text',
             html: `<p>Use additional text blocks to describe specific bugs you hit and how you
-            fixed them — this mirrors how issues were tracked for the main CAD viewer site.</p>`
+            fixed them.</p>`
         }
     ]);
 </script>

@@ -13,9 +13,6 @@
 <header id="site-header"></header>
 <main id="content-root" class="report-content"></main>
 
-<!-- IMPORTANT: replace these three lines with the EXACT three.js / OrbitControls /
-     STLLoader <script> tags copied from your main index.html, so the version matches
-     what cad_viewer.js was tested against. -->
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
@@ -26,7 +23,7 @@
     renderReportHeader('purpose');
 
     renderReportContent('content-root', [
-        { type: 'heading', text: 'Purpose and Data Analysis' },
+        { type: 'page-title', text: 'Purpose and Data Analysis' },
         {
             type: 'text',
             html: `<p>Describe the goal of the Autonomous Pan-Tilt Tracking System here: what problem
@@ -45,7 +42,7 @@
         {
             type: 'viewer',
             label: 'Example: Referenced CAD Model',
-            stlPath: '../cad_data/Translated_Lazy_Suzan.stl',
+            stlPath: '../assembled/YourFile.stl',
             colorSeed: 1
         }
     ]);

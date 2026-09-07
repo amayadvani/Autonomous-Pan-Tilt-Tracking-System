@@ -1,3 +1,9 @@
+/* ============================================================
+   Design Iteration and Signal Strength Report — shared styles
+   Matches the CAD-Portfolio homepage: dark navy/purple background,
+   gold accent title, rounded geometric font, card panels.
+   ============================================================ */
+
 :root {
     --bg-darker: #0d0c16;
     --bg-dark: #1a1a2e;
@@ -39,18 +45,25 @@ body {
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 
+.report-title-rule-bottom {
+    width: 220px;
+    height: 2px;
+    margin: 24px auto 28px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
 .report-title {
     margin: 0 0 8px;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.6rem;
+    font-size: 2.08rem; /* was 2.6rem, reduced ~20% */
     color: var(--accent);
     letter-spacing: 0.5px;
 }
 
 .report-subtitle {
-    margin: 0 0 28px;
-    font-size: 1rem;
+    margin: 0;
+    font-size: 1rem; /* unchanged */
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -98,6 +111,17 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
+}
+
+/* Plain page title (matches the active nav button label) — NOT a card */
+.report-page-title {
+    text-align: center;
+    font-family: var(--font-heading);
+    color: var(--accent-soft);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 4px 0 -8px;
+    letter-spacing: 0.3px;
 }
 
 .report-block {
@@ -203,7 +227,10 @@ body {
 
 @media (max-width: 600px) {
     .report-title {
-        font-size: 1.9rem;
+        font-size: 1.5rem; /* was 1.9rem, reduced ~20% */
+    }
+    .report-page-title {
+        font-size: 1.6rem;
     }
     .report-block {
         padding: 20px;
