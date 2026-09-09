@@ -25,8 +25,8 @@ function renderReportHeader(activeId) {
 
     header.innerHTML = `
         <div class="report-title-rule"></div>
-        <h1 class="report-title">Design Iteration and Signal Strength Report</h1>
-        <p class="report-subtitle">Autonomous Pan-Tilt Tracking System by Amay Advani</p>
+        <h1 class="report-title">Autonomous Pan-Tilt Tracking System/h1>
+        <p class="report-subtitle">Design Iteration and Signal Strength Report by Amay Advani</p>
         <div class="report-title-rule-bottom"></div>
         <nav class="report-nav">${navHtml}</nav>
     `;
