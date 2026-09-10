@@ -25,8 +25,8 @@ function renderReportHeader(activeId) {
 
     header.innerHTML = `
         <div class="report-title-rule"></div>
-        <h1 class="report-title">Autonomous Pan-Tilt Tracking System/h1>
-        <p class="report-subtitle">Design Iteration and Signal Strength Report by Amay Advani</p>
+        <h1 class="report-title">Design Iteration and Signal Strength Report</h1>
+        <p class="report-subtitle">Autonomous Pan-Tilt Tracking System by Amay Advani</p>
         <div class="report-title-rule-bottom"></div>
         <nav class="report-nav">${navHtml}</nav>
     `;
@@ -94,7 +94,13 @@ function renderReportContent(rootId, blocks) {
 
             setTimeout(() => {
                 const container = document.getElementById(viewerId);
-                if (container && window.CADViewer) {
+                if (!container) return;
+
+                // NOTE: check `typeof CADViewer` here, NOT `window.CADViewer`.
+                // A top-level `class CADViewer {...}` declaration does NOT attach
+                // itself to the window object, so `window.CADViewer` is always
+                // undefined even when cad_viewer.js loaded correctly.
+                if (typeof CADViewer !== 'undefined') {
                     const viewer = new CADViewer(container, block.colorSeed ?? idx);
                     viewer.loadModel(block.stlPath);
                     setTimeout(() => window.dispatchEvent(new Event('viewerResize')), 100);
