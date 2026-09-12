@@ -1,5 +1,9 @@
+// 3D CAD Viewer using Three.js - V8
+// V8 changes: tighter zoom/centering, matte (less shiny) material,
+// optional explicit color override per model.
+
 class CADViewer {
-    constructor(container, colorSeed = null) {
+    constructor(container, colorSeed = null, explicitColor = null) {
         this.container = container;
         this.scene = null;
         this.camera = null;
@@ -8,6 +12,7 @@ class CADViewer {
         this.currentModel = null;
         this.modelBounds = null;
         this.colorSeed = colorSeed;
+        this.explicitColor = explicitColor; // e.g. 0x5dd8c4 — overrides palette/colorSeed if set
         this.init();
     }
 
@@ -27,13 +32,13 @@ class CADViewer {
         this.setupControls();
         this.setupResize();
         this.animate();
-        console.log('CAD Viewer V7 initialized');
+        console.log('CAD Viewer V8 initialized');
     }
 
     setupLighting() {
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.55);
         this.scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.8);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.3);
         directionalLight.position.set(10, 14, 8);
         directionalLight.castShadow = true;
         directionalLight.shadow.mapSize.width = 2048;
@@ -46,17 +51,16 @@ class CADViewer {
         directionalLight.shadow.camera.bottom = -10;
         directionalLight.shadow.bias = -0.0005;
         this.scene.add(directionalLight);
-        const fillLight = new THREE.DirectionalLight(0xffeebb, 0.4);
+        const fillLight = new THREE.DirectionalLight(0xffeebb, 0.3);
         fillLight.position.set(-10, -10, -5);
         this.scene.add(fillLight);
-        const hemiLight = new THREE.HemisphereLight(0xffeebb, 0x1a1a2e, 0.4);
+        const hemiLight = new THREE.HemisphereLight(0xffeebb, 0x1a1a2e, 0.35);
         this.scene.add(hemiLight);
-        const pointLight = new THREE.PointLight(0xffa500, 0.8, 50);
+        const pointLight = new THREE.PointLight(0xffa500, 0.35); // dimmer, was 0.8 — was contributing to the "shiny" look
         pointLight.position.set(0, 5, 0);
         this.scene.add(pointLight);
 
-        // Invisible ground plane that only catches shadows beneath each model.
-        const shadowMat = new THREE.ShadowMaterial({ opacity: 0.18 }); // higher = darker shadow
+        const shadowMat = new THREE.ShadowMaterial({ opacity: 0.18 });
         this.groundPlane = new THREE.Mesh(new THREE.PlaneGeometry(200, 200), shadowMat);
         this.groundPlane.rotation.x = -Math.PI / 2;
         this.groundPlane.position.y = -2.4;
@@ -122,8 +126,8 @@ class CADViewer {
         const modelColor = this.getModelColor();
         const material = new THREE.MeshPhongMaterial({
             color: modelColor,
-            shininess: 80,
-            specular: new THREE.Color(0x333333),
+            shininess: 18,                      // was 80 — much less glossy
+            specular: new THREE.Color(0x0d0d0d), // was 0x333333 — dimmer highlight
             side: THREE.DoubleSide,
             flatShading: false
         });
@@ -154,6 +158,9 @@ class CADViewer {
     }
 
     getModelColor() {
+        if (this.explicitColor !== null && this.explicitColor !== undefined) {
+            return this.explicitColor;
+        }
         const palette = [
             0x3498db, 0x2ecc71, 0xe74c3c, 0x9b59b6,
             0xf39c12, 0x1abc9c, 0xe67e22, 0x34495e,
@@ -176,7 +183,7 @@ class CADViewer {
 
         const fov = this.camera.fov * (Math.PI / 180);
         const radius = (displayedSize * Math.sqrt(3)) / 2;
-        const distance = (radius / Math.sin(fov / 2)) * 0.7; // lower = more zoomed in
+        const distance = (radius / Math.sin(fov / 2)) * 0.55; // was 0.7 — more zoomed in
 
         const dir = new THREE.Vector3(1, 0.8, 1).normalize();
         this.camera.position.copy(dir.multiplyScalar(distance));

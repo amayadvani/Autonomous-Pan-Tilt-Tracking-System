@@ -1,7 +1,5 @@
 /* ============================================================
    Design Iteration and Signal Strength Report — shared styles
-   Matches the CAD-Portfolio homepage: dark navy/purple background,
-   gold accent title, rounded geometric font, card panels.
    ============================================================ */
 
 :root {
@@ -31,7 +29,7 @@ body {
     line-height: 1.6;
 }
 
-/* ---------- Header / Nav (constant across all pages) ---------- */
+/* ---------- Header / Nav ---------- */
 
 #site-header {
     padding: 48px 24px 28px;
@@ -56,14 +54,14 @@ body {
     margin: 0 0 8px;
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: 2.08rem; /* was 2.6rem, reduced ~20% */
+    font-size: 2.08rem;
     color: var(--accent);
     letter-spacing: 0.5px;
 }
 
 .report-subtitle {
     margin: 0;
-    font-size: 1rem; /* unchanged */
+    font-size: 1rem;
     color: var(--text-muted);
     font-weight: 500;
 }
@@ -113,7 +111,6 @@ body {
     gap: 40px;
 }
 
-/* Plain page title (matches the active nav button label) — NOT a card */
 .report-page-title {
     text-align: center;
     font-family: var(--font-heading);
@@ -145,6 +142,42 @@ body {
 
 .report-block-text p:last-child {
     margin-bottom: 0;
+}
+
+.report-block-text strong,
+.report-split-text strong,
+.report-bullets strong {
+    color: var(--accent-soft);
+    font-weight: 700;
+}
+
+/* ---------- Subheadings + bullet lists ---------- */
+
+.report-subheading {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    color: var(--accent);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.report-bullets {
+    margin: 0;
+    padding-left: 22px;
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.report-bullets li {
+    padding-left: 4px;
+}
+
+.report-bullets li::marker {
+    color: var(--accent);
 }
 
 /* ---------- Images ---------- */
@@ -227,7 +260,7 @@ body {
 
 @media (max-width: 600px) {
     .report-title {
-        font-size: 1.5rem; /* was 1.9rem, reduced ~20% */
+        font-size: 1.5rem;
     }
     .report-page-title {
         font-size: 1.6rem;

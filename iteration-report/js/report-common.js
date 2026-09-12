@@ -1,10 +1,5 @@
 // ============================================================
 // Shared logic for the Design Iteration and Signal Strength Report
-// - Builds the constant header/title/nav on every page (with a
-//   gold rule line above AND below the title block)
-// - Renders flexible content blocks: page-title, heading, text,
-//   image, image-text, and 3D "viewer" blocks (reuses CADViewer
-//   from cad_viewer.js, which must be loaded BEFORE this file).
 // ============================================================
 
 const REPORT_PAGES = [
@@ -25,20 +20,21 @@ function renderReportHeader(activeId) {
 
     header.innerHTML = `
         <div class="report-title-rule"></div>
-        <h1 class="report-title">Design Iteration and Signal Strength Report</h1>
-        <p class="report-subtitle">Autonomous Pan-Tilt Tracking System by Amay Advani</p>
+        <h1 class="report-title">Autonomous Pan-Tilt Tracking System</h1>
+        <p class="report-subtitle">Design Iteration and Signal Strength Report by Amay Advani</p>
         <div class="report-title-rule-bottom"></div>
         <nav class="report-nav">${navHtml}</nav>
     `;
 }
 
 // blocks: array of objects, each one of:
-//   { type: 'page-title', text: '...' }              -> plain centered title, NOT a card (use once, matching the nav button label)
-//   { type: 'heading', text: '...' }                  -> sub-section heading, shown inside a card
+//   { type: 'page-title', text: '...' }
+//   { type: 'heading', text: '...' }
 //   { type: 'text', html: '<p>...</p>' }
+//   { type: 'bullets', heading: 'Purpose', items: ['...', '...'] }
 //   { type: 'image', src, caption, align: 'full' (optional) }
 //   { type: 'image-text', src, caption, text: '<p>...</p>', imageSide: 'left'|'right' }
-//   { type: 'viewer', stlPath, label, colorSeed }
+//   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
 function renderReportContent(rootId, blocks) {
     const root = document.getElementById(rootId);
     if (!root) return;
@@ -63,6 +59,13 @@ function renderReportContent(rootId, blocks) {
 
         } else if (block.type === 'text') {
             section.innerHTML = block.html;
+            root.appendChild(section);
+
+        } else if (block.type === 'bullets') {
+            const itemsHtml = block.items.map(item => `<li>${item}</li>`).join('');
+            section.innerHTML = `
+                ${block.heading ? `<h3 class="report-subheading">${block.heading}</h3>` : ''}
+                <ul class="report-bullets">${itemsHtml}</ul>`;
             root.appendChild(section);
 
         } else if (block.type === 'image') {
@@ -96,12 +99,8 @@ function renderReportContent(rootId, blocks) {
                 const container = document.getElementById(viewerId);
                 if (!container) return;
 
-                // NOTE: check `typeof CADViewer` here, NOT `window.CADViewer`.
-                // A top-level `class CADViewer {...}` declaration does NOT attach
-                // itself to the window object, so `window.CADViewer` is always
-                // undefined even when cad_viewer.js loaded correctly.
                 if (typeof CADViewer !== 'undefined') {
-                    const viewer = new CADViewer(container, block.colorSeed ?? idx);
+                    const viewer = new CADViewer(container, block.colorSeed ?? idx, block.color ?? null);
                     viewer.loadModel(block.stlPath);
                     setTimeout(() => window.dispatchEvent(new Event('viewerResize')), 100);
                 } else {
