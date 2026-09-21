@@ -403,3 +403,26 @@ body {
 .report-csv-table tbody tr:hover {
     background: rgba(242, 168, 101, 0.08);
 }
+.report-viewer-canvas {
+    position: relative;
+}
+
+.report-viewer-hint {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 12, 22, 0.75);
+    color: var(--text-light);
+    font-size: 0.8rem;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--card-border);
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+.report-viewer-hint.hidden {
+    opacity: 0;
+}

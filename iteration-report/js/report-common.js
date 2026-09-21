@@ -1,7 +1,7 @@
 const REPORT_PAGES = [
     { id: 'purpose', label: 'Purpose and Data Analysis', href: 'index.html' },
-    { id: 'combined', label: 'Combined Assembly and Video', href: 'combined-assembly-and-video.html' },
-    { id: 'individual', label: 'Individual Part Iteration', href: 'individual-part-iteration.html' },
+    { id: 'combined', label: 'Assembly and Video', href: 'combined-assembly-and-video.html' },
+    { id: 'individual', label: 'CAD Iteration', href: 'individual-part-iteration.html' },
     { id: 'logic', label: 'Logic and Code Debugging', href: 'logic-and-code-debugging.html' }
 ];
 
@@ -38,7 +38,7 @@ function renderReportHeader(activeId) {
 //   { type: 'code', label: 'optional title', code: 'raw C++ code as a string' }  -> syntax-highlighted via Prism.js
 //   { type: 'video', src, caption }                    -> direct .mp4 file, e.g. '../vids/demo.mp4'
 //   { type: 'video-embed', embedUrl, caption }          -> YouTube/Drive iframe embed URL
-//   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
+//   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }  -> shows a "click and drag to rotate" hint until first interaction
 //   { type: 'csv-table', label: 'optional title', src: '...csv path' }  -> fetches CSV and renders a scrollable table
 function renderReportContent(rootId, blocks) {
     const root = document.getElementById(rootId);
@@ -154,13 +154,22 @@ function renderReportContent(rootId, blocks) {
             const viewerId = `report-viewer-${idx}-${Math.random().toString(36).slice(2)}`;
             section.innerHTML = `
                 ${block.label ? `<h3 class="report-viewer-label">${block.label}</h3>` : ''}
-                <div id="${viewerId}" class="report-viewer-canvas"></div>`;
+                <div id="${viewerId}" class="report-viewer-canvas">
+                    <div class="report-viewer-hint">Click and drag to rotate</div>
+                </div>`;
             root.appendChild(section);
 
 
             setTimeout(() => {
                 const container = document.getElementById(viewerId);
                 if (!container) return;
+
+                const hint = container.querySelector('.report-viewer-hint');
+                const dismissHint = () => {
+                    if (hint) hint.classList.add('hidden');
+                };
+                container.addEventListener('mousedown', dismissHint, { once: true });
+                container.addEventListener('touchstart', dismissHint, { once: true });
 
 
                 if (typeof CADViewer !== 'undefined') {
