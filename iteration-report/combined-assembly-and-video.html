@@ -26,14 +26,24 @@
         { type: 'page-title', text: 'Combined Assembly and Video' },
         {
             type: 'text',
-            html: `<p>Summarize how the individual parts come together into the full assembly,
-            and embed or link the demo video below.</p>`
+            html: `<p>Goal: Build a fully autonomous pan-tilt tracking system, from scratch, 
+                that can locate a physical target using nothing but an ultrasonic distance 
+                sensor and two servo motors, and hold on it as it moves.</p>`
         },
         {
             type: 'viewer',
             label: 'Final System Assembly',
             stlPath: '../assembled/Autonomous-Pan-Tilt-Tracking-System-Assembly.stl',
             colorSeed: 3
+        },
+        {
+            type: 'text',
+            html: `<h3 class="report-subheading">Automation Requirements: with no manual input after power-on</h3>
+            <ul class="report-bullets">
+            <li><strong>1. </strong> Find the target anywhere in its field of view during a one-time startup scan.</li>
+            <li><strong>2. </strong> Hold on the target as long as it stayed in range.</li>
+            <li><strong>3. </strong> A simple ultrasonic range finder, simulating satellite distance as signal strength.</li>
+            </ul>`
         },
         {
             type: 'video',
