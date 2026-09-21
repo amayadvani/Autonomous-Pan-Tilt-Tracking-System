@@ -246,41 +246,35 @@ body {
     }
 }
 
-/* ---------- Multi-image grid box (different sized photos, uniform cells) ---------- */
+/* ---------- Multi-image "justified" row box ----------
+   All photos share the same height; width scales with each
+   photo's own aspect ratio, so they pack together with no
+   leftover background gaps. Wraps to a new row when full. */
 
 .report-image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .report-image-grid .report-figure {
     margin: 0;
+    flex: 1 1 auto;
 }
 
 .report-image-grid .report-figure img {
-    width: 100%;
-    height: 220px;
+    height: 240px;
+    width: auto;
+    max-width: 100%;
     object-fit: cover;
     border-radius: 12px;
     border: 1px solid var(--card-border);
     display: block;
 }
 
-.report-image-grid .grid-feature {
-    grid-column: 1 / -1;
-}
-
-.report-image-grid .grid-feature img {
-    height: 320px;
-}
-
 @media (max-width: 600px) {
-    .report-image-grid {
-        grid-template-columns: 1fr;
-    }
-    .report-image-grid .grid-feature img {
-        height: 220px;
+    .report-image-grid .report-figure img {
+        height: 160px;
     }
 }
 

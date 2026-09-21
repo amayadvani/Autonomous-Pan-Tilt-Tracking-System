@@ -56,7 +56,7 @@
         },
         {
             type: 'image',
-            src: '../graphs/graph2_real_satellite_distance_signal',
+            src: '../graphs/graph2_real_satellite_distance_signal.png',
             caption: 'Graph 2 — GPS satellite signal strength vs. distance: plotted from LEO to GEO range',
             align: 'full'
         },
@@ -83,6 +83,10 @@
         {
             type: 'text',
             html: `<p>Analysis 3:The servo took a median of 123 ms to move one degree during its reacquisition search — about 8.1°/sec — which sits close to the roughly 10°/sec ceiling on low-cost DIY az/el rotators built for amateur LEO satellite tracking, and comfortably above the 4°/sec minimum one published analysis found necessary to keep a 780 km sun-synchronous satellite in view during a high-elevation pass. Separately, the target stayed detectable across a 60° band of pan angle even though the ultrasonic sensor's spec sheet beam is only about 15° wide.And while sitting locked on target, repeated distance readings weren't perfectly steady: one hold sequence had a standard deviation of about 1.7 cm around a 9.85 cm average. </p>`
+        },
+         {
+            type: 'text',
+            html: `<p> Conclusion : Each of these three pieces is looking at a different layer of the same setup. The distance-vs-signal graphs show that the falloff is significant. a sound pulse and a radio wave both spread out and weaken the same way as they travel, so scaling the ultrasonic echo data onto a log-distance axis produces the exact slope a satellite link would, just over centimeters instead of thousands of kilometers. The reproducibility test shows that running the same 84-cell scan twice and getting the same bearing both times means the search-and-lock loop convergeson it the same way a step-track antenna controller has to in order to stay useful.The slew rate, detection window, and hold jitter numbers are the part that surprised me most, since none of them were picked to line up with anything — they just happened to land in the same range as published figures for real LEO ground-station hardware once I went back and pulled them out of the timestamps.</p>`
         }
     ]);
 </script>
