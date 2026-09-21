@@ -370,3 +370,36 @@ body {
 .report-code code {
     font-family: 'Courier New', monospace;
 }
+.report-csv-wrap {
+    max-height: 480px;
+    overflow-y: auto;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+}
+
+.report-csv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+}
+
+.report-csv-table th,
+.report-csv-table td {
+    padding: 8px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--card-border);
+    color: var(--text-light);
+    white-space: nowrap;
+}
+
+.report-csv-table th {
+    background: var(--card-bg);
+    color: var(--accent-soft);
+    position: sticky;
+    top: 0;
+}
+
+.report-csv-table tbody tr:hover {
+    background: rgba(242, 168, 101, 0.08);
+}

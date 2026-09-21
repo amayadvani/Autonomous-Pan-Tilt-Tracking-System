@@ -39,6 +39,7 @@ function renderReportHeader(activeId) {
 //   { type: 'video', src, caption }                    -> direct .mp4 file, e.g. '../vids/demo.mp4'
 //   { type: 'video-embed', embedUrl, caption }          -> YouTube/Drive iframe embed URL
 //   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
+//   { type: 'csv-table', label: 'optional title', src: '...csv path' }  -> fetches CSV and renders a scrollable table
 function renderReportContent(rootId, blocks) {
     const root = document.getElementById(rootId);
     if (!root) return;
@@ -170,6 +171,31 @@ function renderReportContent(rootId, blocks) {
                     console.error('CADViewer not found — make sure cad_viewer.js (and THREE/OrbitControls/STLLoader) load before report-common.js');
                 }
             }, 50);
+
+
+        } else if (block.type === 'csv-table') {
+            const tableId = `report-csv-${idx}-${Math.random().toString(36).slice(2)}`;
+            section.innerHTML = `
+                ${block.label ? `<h3 class="report-subheading">${block.label}</h3>` : ''}
+                <div class="report-csv-wrap" id="${tableId}">Loading data…</div>`;
+            root.appendChild(section);
+
+            fetch(block.src)
+                .then(res => res.text())
+                .then(text => {
+                    const rows = text.trim().split('\n').map(r => r.split(','));
+                    const header = rows[0];
+                    const body = rows.slice(1);
+                    const tableHtml = `
+                        <table class="report-csv-table">
+                            <thead><tr>${header.map(h => `<th>${h}</th>`).join('')}</tr></thead>
+                            <tbody>${body.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
+                        </table>`;
+                    document.getElementById(tableId).innerHTML = tableHtml;
+                })
+                .catch(() => {
+                    document.getElementById(tableId).innerHTML = `<p>Could not load ${block.src}.</p>`;
+                });
         }
     });
 }

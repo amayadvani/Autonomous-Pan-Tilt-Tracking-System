@@ -71,9 +71,10 @@
             caption: 'Graph 2 — GPS satellite signal strength vs. distance: plotted from LEO to GEO range',
             align: 'full'
         },
+        { type: 'heading', text: 'Analysis 1: ' },
         {
             type: 'text',
-            html: `<p>Analysis 1: Distance and Signal Strength: Free-space path loss describes how a radio signal weakens as it moves away from its source. Because the power spreads out over an expanding sphere, received power falls off with the square of distance, which on a decibel scale becomes a flat −20 dB drop for every tenfold increase in range. Using a real link budget for a GPS L1 signal (44.8 W transmit power, 12 dBi satellite antenna gain, 1575.42 MHz), a ground receiver picks up roughly −120 to −127 dBm from a satellite over 20,000 km away, and around −94 dBm from a 550 km LEO satellite like Starlink — a difference of over 30 dB from distance alone. Converting the ultrasonic sensor's echo distance into an equivalent signal-strength value with the same 20·log₁₀(1/distance) math reproduces that same −20 dB/decade slope, just scaled down to a 7–15 cm range instead of thousands of kilometers.</p>`
+            html: `<p>Distance and Signal Strength: Free-space path loss describes how a radio signal weakens as it moves away from its source. Because the power spreads out over an expanding sphere, received power falls off with the square of distance, which on a decibel scale becomes a flat −20 dB drop for every tenfold increase in range. Using a real link budget for a GPS L1 signal (44.8 W transmit power, 12 dBi satellite antenna gain, 1575.42 MHz), a ground receiver picks up roughly −120 to −127 dBm from a satellite over 20,000 km away, and around −94 dBm from a 550 km LEO satellite like Starlink — a difference of over 30 dB from distance alone. Converting the ultrasonic sensor's echo distance into an equivalent signal-strength value with the same 20·log₁₀(1/distance) math reproduces that same −20 dB/decade slope, just scaled down to a 7–15 cm range instead of thousands of kilometers.</p>`
         },
         {
             type: 'image',
@@ -81,9 +82,10 @@
             caption: 'Graph 3 — Scan reproducibility: Pan sweep at tilt of 61° over two sweeps.',
             align: 'full'
         },
+        { type: 'heading', text: 'Analysis 2: ' },
         {
             type: 'text',
-            html: `<p>Analysis 2: Repeatable Lock-On: Running the rig's full pan/tilt scan twice, independently, sweeping the same 84-cell grid across pan 1–166° and tilt 75–135°, both scans landed on the identical cell — pan 61°, tilt 135° — with recorded distances of 7.76 cm and 7.47 cm, a difference of under three tenths of a centimeter. That repeat convergence matters because the search-and-lock structure in the code (a coarse sweep to find the strongest return, then narrower stepping and holding once something's found) is the same basic method real satellite ground stations use to point an antenna: step in a direction, check whether the signal increases, keep going that way until it peaks, then hold and periodically recheck.</p>`
+            html: `<p>Repeatable Lock-On: Running the rig's full pan/tilt scan twice, independently, sweeping the same 84-cell grid across pan 1–166° and tilt 75–135°, both scans landed on the identical cell — pan 61°, tilt 135° — with recorded distances of 7.76 cm and 7.47 cm, a difference of under three tenths of a centimeter. That repeat convergence matters because the search-and-lock structure in the code (a coarse sweep to find the strongest return, then narrower stepping and holding once something's found) is the same basic method real satellite ground stations use to point an antenna: step in a direction, check whether the signal increases, keep going that way until it peaks, then hold and periodically recheck.</p>`
         },
         {
             type: 'image',
@@ -91,13 +93,15 @@
             caption: 'Graph 4 — Measured rig performance vs. published tracking figures: Slew rate, detection-window width, and hold-state jitter',
             align: 'full'
         },
+        { type: 'heading', text: 'Analysis 3: ' },
         {
             type: 'text',
-            html: `<p>Analysis 3:The servo took a median of 123 ms to move one degree during its reacquisition search — about 8.1°/sec — which sits close to the roughly 10°/sec ceiling on low-cost DIY az/el rotators built for amateur LEO satellite tracking, and comfortably above the 4°/sec minimum one published analysis found necessary to keep a 780 km sun-synchronous satellite in view during a high-elevation pass. Separately, the target stayed detectable across a 60° band of pan angle even though the ultrasonic sensor's spec sheet beam is only about 15° wide.And while sitting locked on target, repeated distance readings weren't perfectly steady: one hold sequence had a standard deviation of about 1.7 cm around a 9.85 cm average. </p>`
+            html: `<p>The servo took a median of 123 ms to move one degree during its reacquisition search — about 8.1°/sec — which sits close to the roughly 10°/sec ceiling on low-cost DIY az/el rotators built for amateur LEO satellite tracking, and comfortably above the 4°/sec minimum one published analysis found necessary to keep a 780 km sun-synchronous satellite in view during a high-elevation pass. Separately, the target stayed detectable across a 60° band of pan angle even though the ultrasonic sensor's spec sheet beam is only about 15° wide.And while sitting locked on target, repeated distance readings weren't perfectly steady: one hold sequence had a standard deviation of about 1.7 cm around a 9.85 cm average. </p>`
         },
-         {
+        { type: 'heading', text: ' Conclusion :' },
+        {
             type: 'text',
-            html: `<p> Conclusion : Each of these three pieces is looking at a different layer of the same setup. The distance-vs-signal graphs show that the falloff is significant. a sound pulse and a radio wave both spread out and weaken the same way as they travel, so scaling the ultrasonic echo data onto a log-distance axis produces the exact slope a satellite link would, just over centimeters instead of thousands of kilometers. The reproducibility test shows that running the same 84-cell scan twice and getting the same bearing both times means the search-and-lock loop convergeson it the same way a step-track antenna controller has to in order to stay useful.The slew rate, detection window, and hold jitter numbers are the part that surprised me most, since none of them were picked to line up with anything — they just happened to land in the same range as published figures for real LEO ground-station hardware once I went back and pulled them out of the timestamps.</p>`
+            html: `<p>Each of these three pieces is looking at a different layer of the same setup. The distance-vs-signal graphs show that the falloff is significant. a sound pulse and a radio wave both spread out and weaken the same way as they travel, so scaling the ultrasonic echo data onto a log-distance axis produces the exact slope a satellite link would, just over centimeters instead of thousands of kilometers. The reproducibility test shows that running the same 84-cell scan twice and getting the same bearing both times means the search-and-lock loop convergeson it the same way a step-track antenna controller has to in order to stay useful.The slew rate, detection window, and hold jitter numbers are the part that surprised me most, since none of them were picked to line up with anything — they just happened to land in the same range as published figures for real LEO ground-station hardware once I went back and pulled them out of the timestamps.</p>`
         },
        {
     type: 'bullets',
