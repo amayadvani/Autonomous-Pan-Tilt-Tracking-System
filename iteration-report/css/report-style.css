@@ -90,7 +90,7 @@ body {
 .report-nav-btn:hover {
     border-color: var(--accent);
     color: var(--accent-soft);
-    box-shadow: 0 0 14px rgba(242, 168, 101, 0.25);
+    box-shadow: 0 0 14px rgba(244, 168, 101, 0.25);
 }
 
 .report-nav-btn.active {
@@ -237,6 +237,36 @@ body {
     .report-split, .report-split.image-right {
         flex-direction: column;
     }
+}
+
+/* ---------- Video blocks ---------- */
+
+.report-video-figure video {
+    width: 100%;
+    max-height: 560px;
+    border-radius: 12px;
+    display: block;
+    border: 1px solid var(--card-border);
+    background: #000;
+}
+
+.report-video-embed-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    background: #000;
+}
+
+.report-video-embed-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* ---------- 3D viewer blocks ---------- */

@@ -1,7 +1,3 @@
-// ============================================================
-// Shared logic for the Design Iteration and Signal Strength Report
-// ============================================================
-
 const REPORT_PAGES = [
     { id: 'purpose', label: 'Purpose and Data Analysis', href: 'index.html' },
     { id: 'combined', label: 'Combined Assembly and Video', href: 'combined-assembly-and-video.html' },
@@ -34,6 +30,8 @@ function renderReportHeader(activeId) {
 //   { type: 'bullets', heading: 'Purpose', items: ['...', '...'] }
 //   { type: 'image', src, caption, align: 'full' (optional) }
 //   { type: 'image-text', src, caption, text: '<p>...</p>', imageSide: 'left'|'right' }
+//   { type: 'video', src, caption }                    -> direct .mp4 file, e.g. '../vids/demo.mp4'
+//   { type: 'video-embed', embedUrl, caption }          -> YouTube/Drive iframe embed URL
 //   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
 function renderReportContent(rootId, blocks) {
     const root = document.getElementById(rootId);
@@ -86,6 +84,27 @@ function renderReportContent(rootId, blocks) {
                     </figure>
                     <div class="report-split-text">${block.text}</div>
                 </div>`;
+            root.appendChild(section);
+
+        } else if (block.type === 'video') {
+            section.innerHTML = `
+                <figure class="report-figure report-video-figure">
+                    <video controls preload="metadata" width="100%">
+                        <source src="${block.src}" type="video/mp4">
+                        Your browser does not support embedded video.
+                    </video>
+                    ${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}
+                </figure>`;
+            root.appendChild(section);
+
+        } else if (block.type === 'video-embed') {
+            section.innerHTML = `
+                <figure class="report-figure report-video-figure">
+                    <div class="report-video-embed-wrap">
+                        <iframe src="${block.embedUrl}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    ${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}
+                </figure>`;
             root.appendChild(section);
 
         } else if (block.type === 'viewer') {
