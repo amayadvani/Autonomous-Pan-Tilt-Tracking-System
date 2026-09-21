@@ -26,9 +26,12 @@
         { type: 'page-title', text: 'Logic and Code Debugging' },
         {
             type: 'text',
-            html: `<p>Document the control logic and any debugging process for the tracking
-            algorithm here — pseudocode, flowcharts, or annotated code screenshots all work well
-            as image blocks.</p>`
+            html: `<p> The control software is a finite state machine written in embedded C++ for an Arduino, 
+                managing two servos (pan and tilt) and an HC-SR04 ultrasonic sensor. On paper, the logic is simple:
+                
+                Scan the full field of view → find the target → hold on it → if lost, search for it → repeat.
+                
+                </p>`
         },
         {
             type: 'image',

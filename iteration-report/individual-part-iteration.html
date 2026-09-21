@@ -26,20 +26,77 @@
         { type: 'page-title', text: 'Individual Part Iteration' },
         {
             type: 'text',
-            html: `<p>Document each part's design history here — early versions, why they changed,
-            and what testing or constraints drove each revision. Duplicate the block pairs below
-            for every part you want to document.</p>`
+            html: `<p>The physical mount went through many CAD revisions, 
+                and just as many print attempts, because I was learning the 
+                constraints of both the CAD software and my 3D printer at the 
+                same time as I was designing the part.
+                
+                
+                Early iterations looked correct on screen but failed the moment 
+                they came off the printer; bores that didn't line up, tolerances 
+                so tight the servo horn wouldn't seat, print orientations that 
+                caused a critical mounting face to warp or need supports it couldn't 
+                be cleaned off.
+                
+                Tolerances that work fine in a CAD assembly simulation don't always 
+                survive layer adhesion, printer calibration drift, or material shrinkage. 
+                Getting the pan/tilt bracket to a point where it held the servos rigidly, 
+                without binding their range of motion, took multiple full print cycles before 
+                it was usable.</p>`
         },
-
-        { type: 'heading', text: 'Base: Largest Designed component' },
+        {
+            type: 'text',
+            html: `<h3 class="report-subheading">Each iteration meant:/h3>
+            <ul class="report-bullets">
+            <li><strong>1. </strong> Adjust the model in CAD based on what the last print got wrong.</li>
+            <li><strong>2. </strong> Re-slice and re-print.</li>
+            <li><strong>3. </strong> Test-fit the servos and sensor against the physical part.</li>
+            <li><strong>4. </strong> Find the next thing that was wrong, and repeat.</li>
+            </ul>`
+        },
+        { type: 'heading', text: 'Gimbal Base: Most Variable Design' },
         {
           type: 'image-grid',
           featureFirst: true,
           images: [
             { src: '../sensor base/failed sensor base.jpeg', caption: 'Failed sensor base' },
             { src: '../sensor base/gear closeup.jpeg', caption: 'Gearcloseup' },
-            { src: '../sensor base/warped.jpeg', caption: 'Warped Base' }]
+            { src: '../sensor base/warped.jpeg', caption: 'Warped Base' },
+            { src: '../assembled/gimbal.jpeg', caption: 'Final Servo Gimbal with Range Sensor' }]
         },
+        { type: 'heading', text: 'Turntable Base: Broken Axel Iterations' },
+{
+    type: 'image-grid',
+    featureFirst: true,
+    images: [
+        { src: '../turntable base/broken axel v2.jpeg', caption: 'Broken Axel V2' },
+        { src: '../turntable base/connectorandsquareaxel.jpeg', caption: 'Connector And Square Axel' },
+        { src: '../turntable base/failed turntable bases.jpeg', caption: 'Failed Turntable Bases' },
+        { src: '../turntable base/warped and broken v1.jpeg', caption: 'Warped And Broken V1' }
+    ]
+},
+{ type: 'heading', text: 'Turntable: Assembly Versions' },
+{
+    type: 'image-grid',
+    featureFirst: true,
+    images: [
+        { src: '../turntable/turntable v1.jpeg', caption: 'Turntable V1' },
+        { src: '../turntable/turntablev2.jpeg', caption: 'Turntable V2' },
+        { src: '../turntable/turntable v3+v4.jpeg', caption: 'Turntable V3+V4' }
+    ]
+},
+{ type: 'heading', text: 'Additional Components: Bearings, Gears, Motor Holder, Servo Base & Gusset' },
+{
+    type: 'image-grid',
+    featureFirst: false,
+    images: [
+        { src: '../bearings/bearing holders.jpeg', caption: 'Bearing Holders' },
+        { src: '../gears/gears.jpeg', caption: 'Gears' },
+        { src: '../motor holder/failed motor holders.jpeg', caption: 'Failed Motor Holders' },
+        { src: '../servo base/servo bases.jpeg', caption: 'Servo Bases' },
+        { src: '../servo gusset/servo gussets.jpeg', caption: 'Servo Gussets' }
+    ]
+},
         {
             type: 'viewer',
             label: 'Current Version (3D)',

@@ -33,6 +33,17 @@
             tracking mechanism that would adjust to the satellite's "orbit" in simplified circular motion.</p>`
         },
         {
+    type: 'bullets',
+    heading: 'Project Overview',
+    items: [
+        'Built a pan/tilt rig with an ultrasonic sensor (HC-SR04) to sweep a target across a grid of angles and log the distance at each spot.',
+        'Logged full timestamped data — angle, distance, and tracking state — not just the final locked position.',
+        'Ran two separate 84-cell scans and compared where each one landed.',
+        'Compared how ultrasonic distance and signal strength fall off against a real GPS satellite link.',
+        'Pulled slew rate, detection window width, and hold jitter from the raw timestamps and checked them against published antenna-tracking numbers.',
+        "The rig per s search-and-lock behavior, and a few of the numbers I measured, matched real satellite ground-station tracking concepts."]
+},
+        {
     type: 'image-text',
     src: '../assembled/gimbal.jpeg',
     caption: 'Final Servo Gimbal with Range Sensor',
@@ -41,7 +52,7 @@
         <h3 class="report-subheading">Constraints</h3>
         <ul class="report-bullets">
             <li><strong>Original plan:</strong> RF signal transmitter and receiver.</li>
-            <li><strong>Resource constraint:</strong> 3D printer size limited the maximum sensing distance to approximately 300 mm.</li>
+            <li><strong>Resource constraint:</strong> 3D printer (PLA/PETG) size limited the maximum sensing distance to approximately 300 mm.</li>
             <li><strong>Final sensor:</strong> A  simple ultrasonic range finder, simulating satellite distance as signal strength.</li>
             <li><strong>Time investment:</strong> about 65 hours total.</li>
             <li><strong>Future improvement:</strong> Enlarge the sensing area and implement Radio Frequency transmission using interlocking printed track segments spanning about 12 feet.</li>
@@ -87,7 +98,40 @@
          {
             type: 'text',
             html: `<p> Conclusion : Each of these three pieces is looking at a different layer of the same setup. The distance-vs-signal graphs show that the falloff is significant. a sound pulse and a radio wave both spread out and weaken the same way as they travel, so scaling the ultrasonic echo data onto a log-distance axis produces the exact slope a satellite link would, just over centimeters instead of thousands of kilometers. The reproducibility test shows that running the same 84-cell scan twice and getting the same bearing both times means the search-and-lock loop convergeson it the same way a step-track antenna controller has to in order to stay useful.The slew rate, detection window, and hold jitter numbers are the part that surprised me most, since none of them were picked to line up with anything — they just happened to land in the same range as published figures for real LEO ground-station hardware once I went back and pulled them out of the timestamps.</p>`
-        }
+        },
+        { type: 'heading', text: 'Works Cited'},
+        {
+            type: 'text',
+            html: `<p>
+         
+For Analysis 1 (distance vs. signal strength):
+
+NXP Semiconductors. GPS, LNA, Sensitivity, Jamming, Cohabitation, TTFF. NXP, www.nxp.com/docs/en/brochure/75016740.pdf.
+
+"What Is a Link Budget?" MathWorks, www.mathworks.com/discovery/link-budget.html.
+
+"RF Free Space Path Loss Measurement Calculators." Pasternack, www.pasternack.com/t-calculator-fspl.aspx.
+
+For Analysis 2 (step-track / reproducibility):
+
+"11.0 Ground Data Systems and Mission Operations." NASA Small Satellite Institute, NASA, 18 May 2026, www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/.
+
+"CONSCAN Implementation for Antenna Control Assembly." NASA Technical Reports Server, NASA, ntrs.nasa.gov/api/citations/19820024669/downloads/19820024669.pdf.
+
+"An Analysis of Conical Scan Antennas for Tracking." IEEE Xplore, IEEE, ieeexplore.ieee.org/iel6/8242/25873/01150441.pdf.
+
+"Conical-Scan Tracking with the 64-m-Diameter Antenna at Goldstone." Calhoun: NPS Institutional Archive, Naval Postgraduate School, Oct. 1976, calhoun.nps.edu/server/api/core/bitstreams/f22d9ca5-ad47-44bf-9b2b-378306fbf7e5/content.
+
+For Analysis 3 (slew rate, beamwidth, jitter):
+
+"Low-Cost Azimuth and Elevation Antenna Rotator for LEO Satellite Tracking." ScienceDirect, Elsevier, www.sciencedirect.com/science/article/abs/pii/S2214785322009270.
+
+"Selecting a Pedestal for Tracking LEO Satellites at Ka Band." Microwave Journal, 1 Apr. 2000, www.microwavejournal.com/articles/2937-selecting-a-pedestal-for-tracking-leo-satellites-at-ka-band.
+
+"Improving Conical Scanning for Satellite Tracking On-The-Move." Caltech Authors Library, California Institute of Technology, authors.library.caltech.edu/42630/1/Karol_2012.pdf.
+
+</p>`
+        },
     ]);
 </script>
 </body>
