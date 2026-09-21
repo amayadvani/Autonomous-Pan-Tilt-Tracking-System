@@ -1,0 +1,994 @@
+TimeMS_ms,PanAngle_deg,TiltAngle_deg,DistanceCM_cm,State_Code,State_Description
+7433,31,105,-1.00,0,Grid Scan
+7602,46,105,-1.00,0,Grid Scan
+7763,61,105,12.72,0,Grid Scan
+7926,76,105,10.12,0,Grid Scan
+8088,91,105,9.72,0,Grid Scan
+8250,106,105,9.83,0,Grid Scan
+8413,121,105,10.53,0,Grid Scan
+8576,136,105,13.07,0,Grid Scan
+8744,151,105,-1.00,0,Grid Scan
+8912,166,105,-1.00,0,Grid Scan
+9077,1,115,-1.00,0,Grid Scan
+9239,16,115,9.53,0,Grid Scan
+9407,31,115,-1.00,0,Grid Scan
+9575,46,115,-1.00,0,Grid Scan
+9737,61,115,10.60,0,Grid Scan
+9900,76,115,9.38,0,Grid Scan
+10061,91,115,8.50,0,Grid Scan
+10223,106,115,9.00,0,Grid Scan
+10386,121,115,9.41,0,Grid Scan
+10552,136,115,-1.00,0,Grid Scan
+10718,151,115,-1.00,0,Grid Scan
+10887,166,115,-1.00,0,Grid Scan
+11051,1,125,-1.00,0,Grid Scan
+11212,16,125,8.31,0,Grid Scan
+11376,31,125,-1.00,0,Grid Scan
+11539,46,125,-1.00,0,Grid Scan
+11703,61,125,-1.00,0,Grid Scan
+11865,76,125,8.31,0,Grid Scan
+12026,91,125,8.19,0,Grid Scan
+12189,106,125,7.69,0,Grid Scan
+12351,121,125,14.00,0,Grid Scan
+1101,1,75,13.34,0,Grid Scan
+1269,16,75,-1.00,0,Grid Scan
+1433,31,75,-1.00,0,Grid Scan
+1604,46,75,-1.00,0,Grid Scan
+1768,61,75,-1.00,0,Grid Scan
+1931,76,75,14.03,0,Grid Scan
+2094,91,75,12.16,0,Grid Scan
+2255,106,75,12.83,0,Grid Scan
+2418,121,75,14.81,0,Grid Scan
+2587,136,75,-1.00,0,Grid Scan
+2754,151,75,-1.00,0,Grid Scan
+2924,166,75,-1.00,0,Grid Scan
+3089,1,85,-1.00,0,Grid Scan
+3252,16,85,12.81,0,Grid Scan
+3420,31,85,-1.00,0,Grid Scan
+3585,46,85,-1.00,0,Grid Scan
+3746,61,85,-1.00,0,Grid Scan
+3909,76,85,12.41,0,Grid Scan
+4071,91,85,11.81,0,Grid Scan
+4234,106,85,11.66,0,Grid Scan
+4396,121,85,12.10,0,Grid Scan
+4564,136,85,-1.00,0,Grid Scan
+4733,151,85,-1.00,0,Grid Scan
+4902,166,85,-1.00,0,Grid Scan
+5067,1,95,-1.00,0,Grid Scan
+5230,16,95,11.69,0,Grid Scan
+5399,31,95,-1.00,0,Grid Scan
+5568,46,95,-1.00,0,Grid Scan
+5741,61,95,-1.00,0,Grid Scan
+5904,76,95,11.71,0,Grid Scan
+6066,91,95,10.95,0,Grid Scan
+6227,106,95,11.00,0,Grid Scan
+6390,121,95,11.29,0,Grid Scan
+6555,136,95,-1.00,0,Grid Scan
+6724,151,95,-1.00,0,Grid Scan
+6892,166,95,-1.00,0,Grid Scan
+7059,1,105,-1.00,0,Grid Scan
+7221,16,105,10.57,0,Grid Scan
+7389,31,105,-1.00,0,Grid Scan
+7555,46,105,-1.00,0,Grid Scan
+7716,61,105,12.02,0,Grid Scan
+7879,76,105,10.43,0,Grid Scan
+8041,91,105,9.62,0,Grid Scan
+8203,106,105,9.72,0,Grid Scan
+8366,121,105,10.48,0,Grid Scan
+8534,136,105,-1.00,0,Grid Scan
+8696,151,105,-1.00,0,Grid Scan
+8864,166,105,-1.00,0,Grid Scan
+9030,1,115,-1.00,0,Grid Scan
+9192,16,115,9.52,0,Grid Scan
+9360,31,115,-1.00,0,Grid Scan
+9529,46,115,-1.00,0,Grid Scan
+9692,61,115,9.86,0,Grid Scan
+9853,76,115,8.95,0,Grid Scan
+10015,91,115,8.21,0,Grid Scan
+10178,106,115,8.84,0,Grid Scan
+10340,121,115,9.41,0,Grid Scan
+10508,136,115,-1.00,0,Grid Scan
+10675,151,115,-1.00,0,Grid Scan
+10841,166,115,-1.00,0,Grid Scan
+11004,1,125,-1.00,0,Grid Scan
+11166,16,125,8.31,0,Grid Scan
+11334,31,125,-1.00,0,Grid Scan
+11507,46,125,-1.00,0,Grid Scan
+11699,61,125,-1.00,0,Grid Scan
+11860,76,125,8.31,0,Grid Scan
+12022,91,125,8.19,0,Grid Scan
+12185,106,125,8.09,0,Grid Scan
+12347,121,125,8.29,0,Grid Scan
+12515,136,125,-1.00,0,Grid Scan
+12678,151,125,14.55,0,Grid Scan
+12843,166,125,-1.00,0,Grid Scan
+13005,1,135,-1.00,0,Grid Scan
+13167,16,135,9.21,0,Grid Scan
+13336,31,135,-1.00,0,Grid Scan
+13515,46,135,-1.00,0,Grid Scan
+13677,61,135,7.76,0,Grid Scan
+13840,76,135,8.66,0,Grid Scan
+14002,91,135,8.24,0,Grid Scan
+14163,106,135,8.26,0,Grid Scan
+14326,121,135,-1.00,0,Grid Scan
+14490,136,135,-1.00,0,Grid Scan
+14654,151,135,-1.00,0,Grid Scan
+14817,166,135,-1.00,0,Grid Scan
+14981,61,135,-1.00,5,Initial Lock Transition
+15044,61,135,6.78,1,Holding Lock
+15106,61,135,7.84,1,Holding Lock
+15169,61,135,-1.00,1,Holding Lock
+15232,61,135,-1.00,2,1-Degree Step Search
+15354,60,135,-1.00,2,1-Degree Step Search
+15477,59,135,-1.00,2,1-Degree Step Search
+15600,58,135,-1.00,2,1-Degree Step Search
+15723,57,135,-1.00,2,1-Degree Step Search
+15875,56,135,-1.00,2,1-Degree Step Search
+16026,55,135,-1.00,2,1-Degree Step Search
+16154,54,135,-1.00,2,1-Degree Step Search
+16277,53,135,6.95,2,1-Degree Step Search
+16350,53,135,-1.00,1,Holding Lock
+16422,53,135,-1.00,2,1-Degree Step Search
+16551,52,135,-1.00,2,1-Degree Step Search
+16680,51,135,-1.00,2,1-Degree Step Search
+16811,50,135,-1.00,2,1-Degree Step Search
+16946,49,135,-1.00,2,1-Degree Step Search
+17082,48,135,-1.00,2,1-Degree Step Search
+17211,47,135,-1.00,2,1-Degree Step Search
+17340,46,135,-1.00,2,1-Degree Step Search
+17469,45,135,-1.00,2,1-Degree Step Search
+17598,44,135,-1.00,2,1-Degree Step Search
+17727,43,135,-1.00,2,1-Degree Step Search
+17856,42,135,-1.00,2,1-Degree Step Search
+17985,41,135,-1.00,2,1-Degree Step Search
+18114,40,135,-1.00,2,1-Degree Step Search
+18243,39,135,-1.00,2,1-Degree Step Search
+18372,38,135,-1.00,2,1-Degree Step Search
+18500,37,135,-1.00,2,1-Degree Step Search
+18628,36,135,-1.00,2,1-Degree Step Search
+18756,35,135,-1.00,2,1-Degree Step Search
+18885,34,135,-1.00,2,1-Degree Step Search
+19013,33,135,-1.00,2,1-Degree Step Search
+19137,32,135,-1.00,2,1-Degree Step Search
+19265,31,135,-1.00,2,1-Degree Step Search
+19393,30,135,-1.00,2,1-Degree Step Search
+19521,29,135,-1.00,2,1-Degree Step Search
+19649,28,135,-1.00,2,1-Degree Step Search
+19772,27,135,-1.00,2,1-Degree Step Search
+19894,26,135,10.53,2,1-Degree Step Search
+19956,26,135,8.36,1,Holding Lock
+20019,26,135,9.57,1,Holding Lock
+20081,26,135,8.14,1,Holding Lock
+20143,26,135,7.90,1,Holding Lock
+20205,26,135,9.02,1,Holding Lock
+20268,26,135,10.09,1,Holding Lock
+20329,26,135,8.71,1,Holding Lock
+20391,26,135,8.66,1,Holding Lock
+20454,26,135,9.52,1,Holding Lock
+20516,26,135,12.71,1,Holding Lock
+20578,26,135,9.52,1,Holding Lock
+20640,26,135,9.05,1,Holding Lock
+20703,26,135,7.79,1,Holding Lock
+20765,26,135,10.12,1,Holding Lock
+20827,26,135,10.38,1,Holding Lock
+20889,26,135,9.10,1,Holding Lock
+20952,26,135,8.59,1,Holding Lock
+21014,26,135,12.88,1,Holding Lock
+21075,26,135,9.31,1,Holding Lock
+21138,26,135,11.45,1,Holding Lock
+21207,26,135,-1.00,1,Holding Lock
+21269,26,135,9.29,2,1-Degree Step Search
+21331,26,135,9.33,1,Holding Lock
+21394,26,135,12.88,1,Holding Lock
+21456,26,135,13.43,1,Holding Lock
+21524,26,135,-1.00,1,Holding Lock
+21593,26,135,-1.00,2,1-Degree Step Search
+21716,25,135,-1.00,2,1-Degree Step Search
+21843,24,135,-1.00,2,1-Degree Step Search
+21970,23,135,-1.00,2,1-Degree Step Search
+22096,22,135,-1.00,2,1-Degree Step Search
+22225,21,135,-1.00,2,1-Degree Step Search
+22351,20,135,-1.00,2,1-Degree Step Search
+22476,19,135,-1.00,2,1-Degree Step Search
+22603,18,135,-1.00,2,1-Degree Step Search
+22729,17,135,-1.00,2,1-Degree Step Search
+22856,16,135,-1.00,2,1-Degree Step Search
+22978,15,135,12.47,2,1-Degree Step Search
+23046,15,135,-1.00,1,Holding Lock
+23112,15,135,-1.00,2,1-Degree Step Search
+23237,14,135,-1.00,2,1-Degree Step Search
+23363,13,135,-1.00,2,1-Degree Step Search
+23490,12,135,-1.00,2,1-Degree Step Search
+23616,11,135,-1.00,2,1-Degree Step Search
+23742,10,135,-1.00,2,1-Degree Step Search
+23868,9,135,-1.00,2,1-Degree Step Search
+23994,8,135,-1.00,2,1-Degree Step Search
+24118,7,135,-1.00,2,1-Degree Step Search
+24244,6,135,-1.00,2,1-Degree Step Search
+24370,5,135,-1.00,2,1-Degree Step Search
+24497,4,135,-1.00,2,1-Degree Step Search
+1101,1,75,14.21,0,Grid Scan
+1270,16,75,-1.00,0,Grid Scan
+1433,31,75,-1.00,0,Grid Scan
+1607,46,75,-1.00,0,Grid Scan
+1781,61,75,-1.00,0,Grid Scan
+1943,76,75,14.45,0,Grid Scan
+2106,91,75,13.22,0,Grid Scan
+2269,106,75,13.29,0,Grid Scan
+2430,121,75,14.76,0,Grid Scan
+2599,136,75,-1.00,0,Grid Scan
+2768,151,75,-1.00,0,Grid Scan
+2934,166,75,-1.00,0,Grid Scan
+3100,1,85,-1.00,0,Grid Scan
+3263,16,85,12.50,0,Grid Scan
+3432,31,85,-1.00,0,Grid Scan
+3601,46,85,-1.00,0,Grid Scan
+3763,61,85,-1.00,0,Grid Scan
+3926,76,85,12.41,0,Grid Scan
+4087,91,85,11.81,0,Grid Scan
+4250,106,85,11.66,0,Grid Scan
+4412,121,85,12.52,0,Grid Scan
+4581,136,85,-1.00,0,Grid Scan
+4749,151,85,-1.00,0,Grid Scan
+4915,166,85,-1.00,0,Grid Scan
+5081,1,95,-1.00,0,Grid Scan
+5243,16,95,11.74,0,Grid Scan
+5412,31,95,-1.00,0,Grid Scan
+5581,46,95,-1.00,0,Grid Scan
+5746,61,95,-1.00,0,Grid Scan
+5908,76,95,11.40,0,Grid Scan
+6071,91,95,10.93,0,Grid Scan
+6233,106,95,10.90,0,Grid Scan
+6395,121,95,10.93,0,Grid Scan
+6563,136,95,-1.00,0,Grid Scan
+6731,151,95,-1.00,0,Grid Scan
+6896,166,95,-1.00,0,Grid Scan
+7062,1,105,-1.00,0,Grid Scan
+7224,16,105,10.59,0,Grid Scan
+7392,31,105,-1.00,0,Grid Scan
+7555,46,105,-1.00,0,Grid Scan
+7717,61,105,12.71,0,Grid Scan
+7879,76,105,10.64,0,Grid Scan
+8042,91,105,9.67,0,Grid Scan
+8204,106,105,9.67,0,Grid Scan
+8366,121,105,10.64,0,Grid Scan
+8535,136,105,-1.00,0,Grid Scan
+8704,151,105,-1.00,0,Grid Scan
+8871,166,105,-1.00,0,Grid Scan
+9036,1,115,-1.00,0,Grid Scan
+9199,16,115,9.83,0,Grid Scan
+9367,31,115,-1.00,0,Grid Scan
+9535,46,115,-1.00,0,Grid Scan
+9697,61,115,9.21,0,Grid Scan
+9859,76,115,9.86,0,Grid Scan
+10021,91,115,8.86,0,Grid Scan
+10183,106,115,8.84,0,Grid Scan
+10345,121,115,9.47,0,Grid Scan
+10514,136,115,-1.00,0,Grid Scan
+10677,151,115,-1.00,0,Grid Scan
+10843,166,115,-1.00,0,Grid Scan
+11006,1,125,-1.00,0,Grid Scan
+11168,16,125,8.76,0,Grid Scan
+11336,31,125,-1.00,0,Grid Scan
+11515,46,125,-1.00,0,Grid Scan
+11706,61,125,-1.00,0,Grid Scan
+11869,76,125,8.19,0,Grid Scan
+12030,91,125,8.14,0,Grid Scan
+12192,106,125,8.26,0,Grid Scan
+12355,121,125,9.07,0,Grid Scan
+12520,136,125,-1.00,0,Grid Scan
+12684,151,125,-1.00,0,Grid Scan
+12850,166,125,-1.00,0,Grid Scan
+13012,1,135,-1.00,0,Grid Scan
+13175,16,135,-1.00,0,Grid Scan
+13343,31,135,-1.00,0,Grid Scan
+13515,46,135,-1.00,0,Grid Scan
+13677,61,135,7.47,0,Grid Scan
+13840,76,135,9.10,0,Grid Scan
+14002,91,135,8.24,0,Grid Scan
+14163,106,135,8.26,0,Grid Scan
+14326,121,135,-1.00,0,Grid Scan
+14490,136,135,-1.00,0,Grid Scan
+14653,151,135,-1.00,0,Grid Scan
+14823,166,135,-1.00,0,Grid Scan
+14986,61,135,-1.00,5,Initial Lock Transition
+15049,61,135,7.17,1,Holding Lock
+15112,61,135,7.72,1,Holding Lock
+15174,61,135,-1.00,1,Holding Lock
+15238,61,135,-1.00,2,1-Degree Step Search
+15361,60,135,-1.00,2,1-Degree Step Search
+15483,59,135,-1.00,2,1-Degree Step Search
+15606,58,135,-1.00,2,1-Degree Step Search
+15729,57,135,-1.00,2,1-Degree Step Search
+15881,56,135,-1.00,2,1-Degree Step Search
+16031,55,135,-1.00,2,1-Degree Step Search
+16156,54,135,-1.00,2,1-Degree Step Search
+16289,53,135,-1.00,2,1-Degree Step Search
+16416,52,135,-1.00,2,1-Degree Step Search
+16545,51,135,-1.00,2,1-Degree Step Search
+16674,50,135,-1.00,2,1-Degree Step Search
+16796,49,135,6.21,2,1-Degree Step Search
+16873,49,135,-1.00,1,Holding Lock
+16944,49,135,-1.00,2,1-Degree Step Search
+17074,48,135,-1.00,2,1-Degree Step Search
+17207,47,135,-1.00,2,1-Degree Step Search
+17336,46,135,-1.00,2,1-Degree Step Search
+17466,45,135,-1.00,2,1-Degree Step Search
+17595,44,135,-1.00,2,1-Degree Step Search
+17717,43,135,7.05,2,1-Degree Step Search
+17786,43,135,-1.00,1,Holding Lock
+17878,43,135,-1.00,2,1-Degree Step Search
+18029,42,135,-1.00,2,1-Degree Step Search
+18153,41,135,-1.00,2,1-Degree Step Search
+18277,40,135,-1.00,2,1-Degree Step Search
+18401,39,135,-1.00,2,1-Degree Step Search
+18525,38,135,-1.00,2,1-Degree Step Search
+18648,37,135,-1.00,2,1-Degree Step Search
+18771,36,135,-1.00,2,1-Degree Step Search
+18900,35,135,-1.00,2,1-Degree Step Search
+19030,34,135,-1.00,2,1-Degree Step Search
+19163,33,135,-1.00,2,1-Degree Step Search
+19292,32,135,-1.00,2,1-Degree Step Search
+19425,31,135,-1.00,2,1-Degree Step Search
+19554,30,135,-1.00,2,1-Degree Step Search
+19683,29,135,-1.00,2,1-Degree Step Search
+19812,28,135,-1.00,2,1-Degree Step Search
+19941,27,135,-1.00,2,1-Degree Step Search
+20069,26,135,-1.00,2,1-Degree Step Search
+20197,25,135,-1.00,2,1-Degree Step Search
+20325,24,135,-1.00,2,1-Degree Step Search
+20453,23,135,-1.00,2,1-Degree Step Search
+20581,22,135,-1.00,2,1-Degree Step Search
+20709,21,135,-1.00,2,1-Degree Step Search
+20832,20,135,-1.00,2,1-Degree Step Search
+20954,19,135,14.66,2,1-Degree Step Search
+21017,19,135,10.97,1,Holding Lock
+21080,19,135,11.76,1,Holding Lock
+21142,19,135,13.48,1,Holding Lock
+21210,19,135,-1.00,1,Holding Lock
+21272,19,135,13.10,2,1-Degree Step Search
+21335,19,135,13.57,1,Holding Lock
+21397,19,135,14.29,1,Holding Lock
+21459,19,135,11.97,1,Holding Lock
+21522,19,135,10.84,1,Holding Lock
+21584,19,135,11.66,1,Holding Lock
+21647,19,135,11.14,1,Holding Lock
+21709,19,135,12.05,1,Holding Lock
+21772,19,135,11.03,1,Holding Lock
+21834,19,135,11.76,1,Holding Lock
+21897,19,135,13.59,1,Holding Lock
+21963,19,135,-1.00,1,Holding Lock
+22030,19,135,-1.00,2,1-Degree Step Search
+22156,18,135,-1.00,2,1-Degree Step Search
+22285,17,135,-1.00,2,1-Degree Step Search
+22412,16,135,-1.00,2,1-Degree Step Search
+22537,15,135,-1.00,2,1-Degree Step Search
+22664,14,135,-1.00,2,1-Degree Step Search
+22790,13,135,-1.00,2,1-Degree Step Search
+22916,12,135,-1.00,2,1-Degree Step Search
+23049,11,135,-1.00,2,1-Degree Step Search
+23176,10,135,-1.00,2,1-Degree Step Search
+23302,9,135,-1.00,2,1-Degree Step Search
+23428,8,135,-1.00,2,1-Degree Step Search
+23554,7,135,-1.00,2,1-Degree Step Search
+23680,6,135,-1.00,2,1-Degree Step Search
+23804,5,135,-1.00,2,1-Degree Step Search
+23930,4,135,-1.00,2,1-Degree Step Search
+24055,3,135,-1.00,2,1-Degree Step Search
+24179,2,135,-1.00,2,1-Degree Step Search
+24305,1,135,-1.00,2,1-Degree Step Search
+24371,179,135,-1.00,3,Wrap-Around Search
+24437,179,135,-1.00,3,Wrap-Around Search
+24504,179,135,-1.00,3,Wrap-Around Search
+24566,179,135,-1.00,3,Wrap-Around Search
+24629,179,135,7.71,3,Wrap-Around Search
+24691,179,135,7.14,3,Wrap-Around Search
+24755,179,135,-1.00,3,Wrap-Around Search
+24818,179,135,-1.00,3,Wrap-Around Search
+24887,179,135,-1.00,3,Wrap-Around Search
+24956,179,135,-1.00,3,Wrap-Around Search
+25020,179,135,-1.00,3,Wrap-Around Search
+25089,179,135,-1.00,3,Wrap-Around Search
+25158,179,135,-1.00,3,Wrap-Around Search
+25227,179,135,-1.00,3,Wrap-Around Search
+25296,179,135,-1.00,3,Wrap-Around Search
+25365,179,135,-1.00,3,Wrap-Around Search
+25435,179,135,-1.00,3,Wrap-Around Search
+25504,179,135,-1.00,3,Wrap-Around Search
+25573,179,135,-1.00,3,Wrap-Around Search
+25643,179,135,-1.00,3,Wrap-Around Search
+25711,179,135,-1.00,3,Wrap-Around Search
+25781,179,135,-1.00,3,Wrap-Around Search
+25849,179,135,-1.00,3,Wrap-Around Search
+25919,179,135,-1.00,3,Wrap-Around Search
+25989,179,135,-1.00,3,Wrap-Around Search
+26057,179,135,-1.00,3,Wrap-Around Search
+26127,179,135,-1.00,3,Wrap-Around Search
+26195,179,135,-1.00,3,Wrap-Around Search
+26265,179,135,-1.00,3,Wrap-Around Search
+26356,179,135,-1.00,3,Wrap-Around Search
+26438,179,135,-1.00,3,Wrap-Around Search
+26520,179,135,-1.00,3,Wrap-Around Search
+26583,179,135,4.02,3,Wrap-Around Search
+26644,179,135,6.05,3,Wrap-Around Search
+26706,179,135,4.53,3,Wrap-Around Search
+26769,179,135,4.79,4,Endpoint Hold
+26831,179,135,6.12,4,Endpoint Hold
+26894,179,135,6.47,4,Endpoint Hold
+26955,179,135,6.57,4,Endpoint Hold
+27018,179,135,7.22,4,Endpoint Hold
+27079,179,135,6.21,4,Endpoint Hold
+27142,179,135,7.38,4,Endpoint Hold
+27204,179,135,7.59,4,Endpoint Hold
+27266,179,135,6.67,4,Endpoint Hold
+27328,179,135,6.47,4,Endpoint Hold
+27390,179,135,7.69,4,Endpoint Hold
+27452,179,135,7.19,4,Endpoint Hold
+27514,179,135,6.16,4,Endpoint Hold
+27576,179,135,5.81,4,Endpoint Hold
+27638,179,135,5.81,4,Endpoint Hold
+27700,179,135,5.81,4,Endpoint Hold
+27762,179,135,5.76,4,Endpoint Hold
+27825,179,135,6.07,4,Endpoint Hold
+27886,179,135,5.34,4,Endpoint Hold
+27949,179,135,5.29,4,Endpoint Hold
+28010,179,135,6.26,4,Endpoint Hold
+28072,179,135,6.16,4,Endpoint Hold
+28134,179,135,7.12,4,Endpoint Hold
+28196,179,135,7.69,4,Endpoint Hold
+28259,179,135,7.02,4,Endpoint Hold
+28320,179,135,6.67,4,Endpoint Hold
+28383,179,135,7.28,4,Endpoint Hold
+28445,179,135,7.09,4,Endpoint Hold
+28507,179,135,6.72,4,Endpoint Hold
+28569,179,135,6.83,4,Endpoint Hold
+28632,179,135,6.67,4,Endpoint Hold
+28693,179,135,7.69,4,Endpoint Hold
+28755,179,135,7.17,4,Endpoint Hold
+28818,179,135,7.43,4,Endpoint Hold
+28879,179,135,7.33,4,Endpoint Hold
+28942,179,135,6.62,4,Endpoint Hold
+29003,179,135,6.62,4,Endpoint Hold
+29066,179,135,7.88,4,Endpoint Hold
+29138,179,135,-1.00,4,Endpoint Hold
+29208,179,135,-1.00,4,Endpoint Hold
+29278,179,135,-1.00,4,Endpoint Hold
+29347,179,135,-1.00,2,1-Degree Step Search
+29476,178,135,-1.00,2,1-Degree Step Search
+29606,177,135,-1.00,2,1-Degree Step Search
+29735,176,135,-1.00,2,1-Degree Step Search
+29864,175,135,-1.00,2,1-Degree Step Search
+29993,174,135,-1.00,2,1-Degree Step Search
+30123,173,135,-1.00,2,1-Degree Step Search
+30253,172,135,-1.00,2,1-Degree Step Search
+30382,171,135,-1.00,2,1-Degree Step Search
+30511,170,135,-1.00,2,1-Degree Step Search
+30640,169,135,-1.00,2,1-Degree Step Search
+30769,168,135,-1.00,2,1-Degree Step Search
+30898,167,135,-1.00,2,1-Degree Step Search
+31022,166,135,-1.00,2,1-Degree Step Search
+31145,165,135,-1.00,2,1-Degree Step Search
+31268,164,135,-1.00,2,1-Degree Step Search
+31392,163,135,-1.00,2,1-Degree Step Search
+31515,162,135,-1.00,2,1-Degree Step Search
+31639,161,135,-1.00,2,1-Degree Step Search
+31768,160,135,-1.00,2,1-Degree Step Search
+31892,159,135,-1.00,2,1-Degree Step Search
+32015,158,135,-1.00,2,1-Degree Step Search
+32139,157,135,-1.00,2,1-Degree Step Search
+32262,156,135,-1.00,2,1-Degree Step Search
+32386,155,135,-1.00,2,1-Degree Step Search
+32509,154,135,-1.00,2,1-Degree Step Search
+32632,153,135,-1.00,2,1-Degree Step Search
+32762,152,135,-1.00,2,1-Degree Step Search
+32891,151,135,-1.00,2,1-Degree Step Search
+33020,150,135,-1.00,2,1-Degree Step Search
+33149,149,135,-1.00,2,1-Degree Step Search
+33273,148,135,-1.00,2,1-Degree Step Search
+33397,147,135,-1.00,2,1-Degree Step Search
+33521,146,135,-1.00,2,1-Degree Step Search
+33650,145,135,-1.00,2,1-Degree Step Search
+33773,144,135,-1.00,2,1-Degree Step Search
+33897,143,135,-1.00,2,1-Degree Step Search
+34020,142,135,-1.00,2,1-Degree Step Search
+34144,141,135,-1.00,2,1-Degree Step Search
+34268,140,135,-1.00,2,1-Degree Step Search
+34391,139,135,-1.00,2,1-Degree Step Search
+34513,138,135,-1.00,2,1-Degree Step Search
+34637,137,135,-1.00,2,1-Degree Step Search
+34760,136,135,-1.00,2,1-Degree Step Search
+34884,135,135,-1.00,2,1-Degree Step Search
+35007,134,135,-1.00,2,1-Degree Step Search
+35131,133,135,-1.00,2,1-Degree Step Search
+35255,132,135,-1.00,2,1-Degree Step Search
+35378,131,135,-1.00,2,1-Degree Step Search
+35501,130,135,-1.00,2,1-Degree Step Search
+35630,129,135,-1.00,2,1-Degree Step Search
+35752,128,135,-1.00,2,1-Degree Step Search
+35875,127,135,-1.00,2,1-Degree Step Search
+35998,126,135,-1.00,2,1-Degree Step Search
+36121,125,135,-1.00,2,1-Degree Step Search
+36244,124,135,-1.00,2,1-Degree Step Search
+36367,123,135,-1.00,2,1-Degree Step Search
+36489,122,135,-1.00,2,1-Degree Step Search
+36612,121,135,-1.00,2,1-Degree Step Search
+36734,120,135,-1.00,2,1-Degree Step Search
+36857,119,135,-1.00,2,1-Degree Step Search
+36980,118,135,-1.00,2,1-Degree Step Search
+37102,117,135,9.10,2,1-Degree Step Search
+37166,117,135,-1.00,1,Holding Lock
+37228,117,135,8.26,2,1-Degree Step Search
+37291,117,135,-1.00,1,Holding Lock
+37353,117,135,8.36,2,1-Degree Step Search
+37416,117,135,-1.00,1,Holding Lock
+37479,117,135,8.24,2,1-Degree Step Search
+37541,117,135,8.02,1,Holding Lock
+37604,117,135,-1.00,1,Holding Lock
+37666,117,135,8.26,2,1-Degree Step Search
+37729,117,135,8.24,1,Holding Lock
+37791,117,135,9.07,1,Holding Lock
+37853,117,135,9.16,1,Holding Lock
+37915,117,135,9.16,1,Holding Lock
+37978,117,135,9.07,1,Holding Lock
+38040,117,135,9.07,1,Holding Lock
+38102,117,135,9.16,1,Holding Lock
+38164,117,135,9.16,1,Holding Lock
+38226,117,135,9.05,1,Holding Lock
+38289,117,135,9.07,1,Holding Lock
+38350,117,135,9.16,1,Holding Lock
+38413,117,135,9.17,1,Holding Lock
+38475,117,135,9.07,1,Holding Lock
+38538,117,135,9.05,1,Holding Lock
+38599,117,135,9.16,1,Holding Lock
+38662,117,135,9.16,1,Holding Lock
+38724,117,135,9.05,1,Holding Lock
+38787,117,135,9.05,1,Holding Lock
+38848,117,135,9.17,1,Holding Lock
+38912,117,135,-1.00,1,Holding Lock
+38974,117,135,8.26,2,1-Degree Step Search
+39036,117,135,8.26,1,Holding Lock
+39098,117,135,9.16,1,Holding Lock
+39160,117,135,9.17,1,Holding Lock
+39223,117,135,9.05,1,Holding Lock
+39285,117,135,9.05,1,Holding Lock
+39347,117,135,9.17,1,Holding Lock
+39409,117,135,8.29,1,Holding Lock
+39472,117,135,9.07,1,Holding Lock
+39534,117,135,9.05,1,Holding Lock
+39596,117,135,9.16,1,Holding Lock
+39658,117,135,9.17,1,Holding Lock
+39720,117,135,9.05,1,Holding Lock
+39783,117,135,9.07,1,Holding Lock
+39844,117,135,9.17,1,Holding Lock
+39908,117,135,-1.00,1,Holding Lock
+39970,117,135,8.24,2,1-Degree Step Search
+40033,117,135,8.26,1,Holding Lock
+40094,117,135,9.17,1,Holding Lock
+40157,117,135,9.16,1,Holding Lock
+40219,117,135,-1.00,1,Holding Lock
+40282,117,135,7.55,2,1-Degree Step Search
+40344,117,135,8.36,1,Holding Lock
+40407,117,135,9.07,1,Holding Lock
+40469,117,135,9.05,1,Holding Lock
+40531,117,135,9.17,1,Holding Lock
+40593,117,135,9.16,1,Holding Lock
+40655,117,135,9.07,1,Holding Lock
+40718,117,135,9.05,1,Holding Lock
+40780,117,135,8.90,1,Holding Lock
+40842,117,135,9.16,1,Holding Lock
+40904,117,135,9.05,1,Holding Lock
+40967,117,135,9.05,1,Holding Lock
+41029,117,135,9.16,1,Holding Lock
+41091,117,135,9.16,1,Holding Lock
+41153,117,135,9.05,1,Holding Lock
+41216,117,135,9.05,1,Holding Lock
+41277,117,135,9.17,1,Holding Lock
+41339,117,135,8.90,1,Holding Lock
+41402,117,135,9.07,1,Holding Lock
+41464,117,135,9.07,1,Holding Lock
+41526,117,135,9.17,1,Holding Lock
+41588,117,135,9.17,1,Holding Lock
+41651,117,135,9.05,1,Holding Lock
+41713,117,135,9.05,1,Holding Lock
+41775,117,135,9.16,1,Holding Lock
+41837,117,135,9.16,1,Holding Lock
+41900,117,135,9.05,1,Holding Lock
+41962,117,135,8.69,1,Holding Lock
+42023,117,135,8.91,1,Holding Lock
+42086,117,135,9.17,1,Holding Lock
+42148,117,135,9.05,1,Holding Lock
+42211,117,135,9.07,1,Holding Lock
+42272,117,135,9.17,1,Holding Lock
+42335,117,135,9.16,1,Holding Lock
+42397,117,135,9.07,1,Holding Lock
+42460,117,135,9.07,1,Holding Lock
+42521,117,135,8.97,1,Holding Lock
+42584,117,135,8.91,1,Holding Lock
+42646,117,135,9.07,1,Holding Lock
+42708,117,135,9.05,1,Holding Lock
+42770,117,135,9.17,1,Holding Lock
+42832,117,135,9.16,1,Holding Lock
+42895,117,135,9.05,1,Holding Lock
+42957,117,135,9.05,1,Holding Lock
+43019,117,135,8.29,1,Holding Lock
+43081,117,135,8.21,1,Holding Lock
+43144,117,135,7.79,1,Holding Lock
+43205,117,135,8.29,1,Holding Lock
+43268,117,135,8.29,1,Holding Lock
+43330,117,135,8.19,1,Holding Lock
+43393,117,135,8.29,1,Holding Lock
+43454,117,135,8.29,1,Holding Lock
+43516,117,135,8.19,1,Holding Lock
+43579,117,135,8.60,1,Holding Lock
+43640,117,135,8.71,1,Holding Lock
+43703,117,135,8.71,1,Holding Lock
+43765,117,135,8.60,1,Holding Lock
+43828,117,135,8.60,1,Holding Lock
+43889,117,135,8.71,1,Holding Lock
+43952,117,135,8.60,1,Holding Lock
+44014,117,135,9.02,1,Holding Lock
+44076,117,135,9.10,1,Holding Lock
+44138,117,135,9.10,1,Holding Lock
+44200,117,135,7.90,1,Holding Lock
+44263,117,135,8.14,1,Holding Lock
+44324,117,135,8.26,1,Holding Lock
+44387,117,135,8.14,1,Holding Lock
+44449,117,135,8.16,1,Holding Lock
+44511,117,135,8.66,1,Holding Lock
+44573,117,135,8.66,1,Holding Lock
+44636,117,135,8.55,1,Holding Lock
+44698,117,135,8.97,1,Holding Lock
+44760,117,135,8.66,1,Holding Lock
+44822,117,135,8.59,1,Holding Lock
+44884,117,135,8.71,1,Holding Lock
+44947,117,135,8.66,1,Holding Lock
+45008,117,135,8.66,1,Holding Lock
+45071,117,135,8.16,1,Holding Lock
+45133,117,135,8.14,1,Holding Lock
+45195,117,135,7.84,1,Holding Lock
+45257,117,135,9.00,1,Holding Lock
+45320,117,135,8.60,1,Holding Lock
+45382,117,135,8.71,1,Holding Lock
+45444,117,135,8.71,1,Holding Lock
+45506,117,135,8.19,1,Holding Lock
+45569,117,135,8.19,1,Holding Lock
+45630,117,135,9.16,1,Holding Lock
+45692,117,135,9.17,1,Holding Lock
+45755,117,135,-1.00,1,Holding Lock
+45818,117,135,-1.00,2,1-Degree Step Search
+45941,116,135,-1.00,2,1-Degree Step Search
+46064,115,135,-1.00,2,1-Degree Step Search
+46186,114,135,-1.00,2,1-Degree Step Search
+46309,113,135,-1.00,2,1-Degree Step Search
+46432,112,135,-1.00,2,1-Degree Step Search
+46555,111,135,-1.00,2,1-Degree Step Search
+46676,110,135,13.53,2,1-Degree Step Search
+46740,110,135,11.55,1,Holding Lock
+46802,110,135,13.02,1,Holding Lock
+46865,110,135,11.97,1,Holding Lock
+46927,110,135,12.21,1,Holding Lock
+46990,110,135,11.81,1,Holding Lock
+47052,110,135,11.91,1,Holding Lock
+47115,110,135,12.78,1,Holding Lock
+47176,110,135,11.97,1,Holding Lock
+47239,110,135,11.97,1,Holding Lock
+47301,110,135,11.55,1,Holding Lock
+47364,110,135,11.16,1,Holding Lock
+47426,110,135,10.74,1,Holding Lock
+47489,110,135,10.64,1,Holding Lock
+47551,110,135,10.24,1,Holding Lock
+47613,110,135,9.83,1,Holding Lock
+47676,110,135,9.41,1,Holding Lock
+47737,110,135,9.10,1,Holding Lock
+47800,110,135,9.00,1,Holding Lock
+47862,110,135,8.60,1,Holding Lock
+47925,110,135,8.71,1,Holding Lock
+47986,110,135,8.71,1,Holding Lock
+48049,110,135,9.47,1,Holding Lock
+48111,110,135,9.47,1,Holding Lock
+48177,110,135,-1.00,1,Holding Lock
+48243,110,135,-1.00,2,1-Degree Step Search
+48367,109,135,-1.00,2,1-Degree Step Search
+48490,108,135,-1.00,2,1-Degree Step Search
+48614,107,135,-1.00,2,1-Degree Step Search
+48737,106,135,-1.00,2,1-Degree Step Search
+48861,105,135,-1.00,2,1-Degree Step Search
+48984,104,135,-1.00,2,1-Degree Step Search
+49106,103,135,-1.00,2,1-Degree Step Search
+49229,102,135,-1.00,2,1-Degree Step Search
+49353,101,135,-1.00,2,1-Degree Step Search
+49476,100,135,-1.00,2,1-Degree Step Search
+49599,99,135,-1.00,2,1-Degree Step Search
+49722,98,135,-1.00,2,1-Degree Step Search
+49844,97,135,9.45,2,1-Degree Step Search
+49906,97,135,9.74,1,Holding Lock
+49969,97,135,10.19,1,Holding Lock
+50031,97,135,10.17,1,Holding Lock
+50094,97,135,11.03,1,Holding Lock
+50155,97,135,10.33,1,Holding Lock
+50217,97,135,10.33,1,Holding Lock
+50280,97,135,9.41,1,Holding Lock
+50342,97,135,9.41,1,Holding Lock
+50405,97,135,9.10,1,Holding Lock
+50466,97,135,9.12,1,Holding Lock
+50529,97,135,9.86,1,Holding Lock
+50591,97,135,9.88,1,Holding Lock
+50654,97,135,-1.00,1,Holding Lock
+50717,97,135,-1.00,2,1-Degree Step Search
+50840,96,135,-1.00,2,1-Degree Step Search
+50964,95,135,-1.00,2,1-Degree Step Search
+51087,94,135,-1.00,2,1-Degree Step Search
+51210,93,135,-1.00,2,1-Degree Step Search
+51333,92,135,-1.00,2,1-Degree Step Search
+51457,91,135,-1.00,2,1-Degree Step Search
+51579,90,135,-1.00,2,1-Degree Step Search
+51702,89,135,-1.00,2,1-Degree Step Search
+51825,88,135,-1.00,2,1-Degree Step Search
+51948,87,135,-1.00,2,1-Degree Step Search
+52071,86,135,-1.00,2,1-Degree Step Search
+52194,85,135,-1.00,2,1-Degree Step Search
+52318,84,135,-1.00,2,1-Degree Step Search
+52441,83,135,-1.00,2,1-Degree Step Search
+52563,82,135,-1.00,2,1-Degree Step Search
+52685,81,135,11.26,2,1-Degree Step Search
+52748,81,135,10.62,1,Holding Lock
+52810,81,135,11.55,1,Holding Lock
+52873,81,135,11.03,1,Holding Lock
+52935,81,135,10.64,1,Holding Lock
+52998,81,135,10.22,1,Holding Lock
+53060,81,135,9.83,1,Holding Lock
+53122,81,135,9.26,1,Holding Lock
+53184,81,135,10.69,1,Holding Lock
+53246,81,135,10.28,1,Holding Lock
+53309,81,135,9.88,1,Holding Lock
+53370,81,135,9.98,1,Holding Lock
+53433,81,135,10.84,1,Holding Lock
+53496,81,135,-1.00,1,Holding Lock
+53559,81,135,-1.00,2,1-Degree Step Search
+53682,80,135,-1.00,2,1-Degree Step Search
+53804,79,135,7.05,2,1-Degree Step Search
+53867,79,135,-1.00,1,Holding Lock
+53931,79,135,-1.00,2,1-Degree Step Search
+54053,78,135,-1.00,2,1-Degree Step Search
+54176,77,135,-1.00,2,1-Degree Step Search
+54298,76,135,-1.00,2,1-Degree Step Search
+54422,75,135,-1.00,2,1-Degree Step Search
+54544,74,135,7.05,2,1-Degree Step Search
+54636,74,135,-1.00,1,Holding Lock
+54718,74,135,-1.00,2,1-Degree Step Search
+54870,73,135,-1.00,2,1-Degree Step Search
+54992,72,135,-1.00,2,1-Degree Step Search
+55115,71,135,-1.00,2,1-Degree Step Search
+55238,70,135,-1.00,2,1-Degree Step Search
+55361,69,135,-1.00,2,1-Degree Step Search
+55483,68,135,11.91,2,1-Degree Step Search
+55545,68,135,10.00,1,Holding Lock
+55608,68,135,11.10,1,Holding Lock
+55670,68,135,10.69,1,Holding Lock
+55733,68,135,11.55,1,Holding Lock
+55795,68,135,-1.00,1,Holding Lock
+55887,68,135,-1.00,2,1-Degree Step Search
+56039,67,135,-1.00,2,1-Degree Step Search
+56189,66,135,-1.00,2,1-Degree Step Search
+56341,65,135,-1.00,2,1-Degree Step Search
+56464,64,135,-1.00,2,1-Degree Step Search
+56587,63,135,-1.00,2,1-Degree Step Search
+56710,62,135,-1.00,2,1-Degree Step Search
+56832,61,135,-1.00,2,1-Degree Step Search
+56954,60,135,-1.00,2,1-Degree Step Search
+57077,59,135,-1.00,2,1-Degree Step Search
+57200,58,135,-1.00,2,1-Degree Step Search
+57323,57,135,-1.00,2,1-Degree Step Search
+57446,56,135,-1.00,2,1-Degree Step Search
+57568,55,135,-1.00,2,1-Degree Step Search
+57691,54,135,13.09,2,1-Degree Step Search
+57753,54,135,10.78,1,Holding Lock
+57816,54,135,12.67,1,Holding Lock
+57878,54,135,11.03,1,Holding Lock
+57940,54,135,11.45,1,Holding Lock
+58003,54,135,11.66,1,Holding Lock
+58065,54,135,11.91,1,Holding Lock
+58128,54,135,11.21,1,Holding Lock
+58189,54,135,11.19,1,Holding Lock
+58252,54,135,10.79,1,Holding Lock
+58314,54,135,11.55,1,Holding Lock
+58377,54,135,11.55,1,Holding Lock
+58439,54,135,-1.00,1,Holding Lock
+58531,54,135,-1.00,2,1-Degree Step Search
+58683,53,135,-1.00,2,1-Degree Step Search
+58805,52,135,6.95,2,1-Degree Step Search
+58867,52,135,-1.00,1,Holding Lock
+58959,52,135,-1.00,2,1-Degree Step Search
+59104,51,135,-1.00,2,1-Degree Step Search
+59255,50,135,-1.00,2,1-Degree Step Search
+59378,49,135,-1.00,2,1-Degree Step Search
+59501,48,135,-1.00,2,1-Degree Step Search
+59624,47,135,-1.00,2,1-Degree Step Search
+59746,46,135,13.19,2,1-Degree Step Search
+59809,46,135,-1.00,1,Holding Lock
+59872,46,135,-1.00,2,1-Degree Step Search
+59995,45,135,-1.00,2,1-Degree Step Search
+60118,44,135,-1.00,2,1-Degree Step Search
+60240,43,135,-1.00,2,1-Degree Step Search
+60363,42,135,-1.00,2,1-Degree Step Search
+60485,41,135,13.09,2,1-Degree Step Search
+60549,41,135,-1.00,1,Holding Lock
+60611,41,135,11.19,2,1-Degree Step Search
+60674,41,135,11.64,1,Holding Lock
+60736,41,135,12.72,1,Holding Lock
+60798,41,135,11.91,1,Holding Lock
+60861,41,135,11.91,1,Holding Lock
+60923,41,135,11.24,1,Holding Lock
+60986,41,135,12.36,1,Holding Lock
+61048,41,135,11.95,1,Holding Lock
+61111,41,135,11.97,1,Holding Lock
+61202,41,135,-1.00,1,Holding Lock
+61284,41,135,-1.00,2,1-Degree Step Search
+61407,40,135,12.21,2,1-Degree Step Search
+61498,40,135,-1.00,1,Holding Lock
+61581,40,135,-1.00,2,1-Degree Step Search
+61731,39,135,-1.00,2,1-Degree Step Search
+61883,38,135,-1.00,2,1-Degree Step Search
+62024,37,135,-1.00,2,1-Degree Step Search
+62176,36,135,-1.00,2,1-Degree Step Search
+62327,35,135,-1.00,2,1-Degree Step Search
+62456,34,135,-1.00,2,1-Degree Step Search
+62585,33,135,-1.00,2,1-Degree Step Search
+62714,32,135,-1.00,2,1-Degree Step Search
+62837,31,135,-1.00,2,1-Degree Step Search
+62960,30,135,-1.00,2,1-Degree Step Search
+63083,29,135,-1.00,2,1-Degree Step Search
+63205,28,135,6.21,2,1-Degree Step Search
+63268,28,135,-1.00,1,Holding Lock
+63337,28,135,-1.00,2,1-Degree Step Search
+63465,27,135,-1.00,2,1-Degree Step Search
+63594,26,135,-1.00,2,1-Degree Step Search
+63722,25,135,-1.00,2,1-Degree Step Search
+63846,24,135,-1.00,2,1-Degree Step Search
+63969,23,135,-1.00,2,1-Degree Step Search
+64091,22,135,-1.00,2,1-Degree Step Search
+64214,21,135,-1.00,2,1-Degree Step Search
+64336,20,135,13.43,2,1-Degree Step Search
+64400,20,135,-1.00,1,Holding Lock
+64462,20,135,12.28,2,1-Degree Step Search
+64526,20,135,-1.00,1,Holding Lock
+64588,20,135,-1.00,2,1-Degree Step Search
+64711,19,135,-1.00,2,1-Degree Step Search
+64834,18,135,-1.00,2,1-Degree Step Search
+64957,17,135,-1.00,2,1-Degree Step Search
+65081,16,135,-1.00,2,1-Degree Step Search
+65203,15,135,-1.00,2,1-Degree Step Search
+65326,14,135,14.34,2,1-Degree Step Search
+65389,14,135,-1.00,1,Holding Lock
+65452,14,135,-1.00,2,1-Degree Step Search
+65574,13,135,-1.00,2,1-Degree Step Search
+65697,12,135,-1.00,2,1-Degree Step Search
+65820,11,135,-1.00,2,1-Degree Step Search
+65945,10,135,-1.00,2,1-Degree Step Search
+66068,9,135,-1.00,2,1-Degree Step Search
+66191,8,135,-1.00,2,1-Degree Step Search
+66313,7,135,-1.00,2,1-Degree Step Search
+66436,6,135,-1.00,2,1-Degree Step Search
+66558,5,135,-1.00,2,1-Degree Step Search
+66681,4,135,-1.00,2,1-Degree Step Search
+66803,3,135,-1.00,2,1-Degree Step Search
+66926,2,135,12.14,2,1-Degree Step Search
+66989,2,135,-1.00,1,Holding Lock
+67052,2,135,12.28,2,1-Degree Step Search
+67115,2,135,11.43,1,Holding Lock
+67177,2,135,13.38,1,Holding Lock
+67239,2,135,-1.00,1,Holding Lock
+67302,2,135,-1.00,2,1-Degree Step Search
+67425,1,135,-1.00,2,1-Degree Step Search
+67487,179,135,11.53,3,Wrap-Around Search
+67554,179,135,-1.00,3,Wrap-Around Search
+67620,179,135,-1.00,3,Wrap-Around Search
+67687,179,135,-1.00,3,Wrap-Around Search
+67750,179,135,-1.00,3,Wrap-Around Search
+67814,179,135,-1.00,3,Wrap-Around Search
+67877,179,135,-1.00,3,Wrap-Around Search
+67941,179,135,-1.00,3,Wrap-Around Search
+68006,179,135,-1.00,3,Wrap-Around Search
+68076,179,135,-1.00,3,Wrap-Around Search
+68146,179,135,-1.00,3,Wrap-Around Search
+68207,179,135,7.05,3,Wrap-Around Search
+68277,179,135,-1.00,3,Wrap-Around Search
+68346,179,135,-1.00,3,Wrap-Around Search
+68416,179,135,-1.00,3,Wrap-Around Search
+68485,179,135,-1.00,3,Wrap-Around Search
+68554,179,135,-1.00,3,Wrap-Around Search
+68623,179,135,-1.00,3,Wrap-Around Search
+68692,179,135,-1.00,3,Wrap-Around Search
+68761,179,135,-1.00,3,Wrap-Around Search
+68831,179,135,-1.00,3,Wrap-Around Search
+68900,179,135,-1.00,3,Wrap-Around Search
+68969,179,135,-1.00,3,Wrap-Around Search
+69039,179,135,-1.00,3,Wrap-Around Search
+69108,179,135,-1.00,3,Wrap-Around Search
+69177,179,135,-1.00,3,Wrap-Around Search
+69246,179,135,-1.00,3,Wrap-Around Search
+69316,179,135,-1.00,3,Wrap-Around Search
+69385,179,135,-1.00,3,Wrap-Around Search
+69454,179,135,-1.00,3,Wrap-Around Search
+69523,179,135,-1.00,3,Wrap-Around Search
+69593,179,135,-1.00,3,Wrap-Around Search
+69662,179,135,-1.00,3,Wrap-Around Search
+69731,179,135,-1.00,3,Wrap-Around Search
+69800,179,135,-1.00,3,Wrap-Around Search
+69869,179,135,-1.00,3,Wrap-Around Search
+69939,179,135,-1.00,3,Wrap-Around Search
+70008,179,135,-1.00,3,Wrap-Around Search
+70077,179,135,-1.00,3,Wrap-Around Search
+70147,179,135,-1.00,3,Wrap-Around Search
+70215,179,135,-1.00,3,Wrap-Around Search
+70285,179,135,-1.00,3,Wrap-Around Search
+70354,179,135,-1.00,3,Wrap-Around Search
+70423,179,135,-1.00,3,Wrap-Around Search
+70493,179,135,-1.00,3,Wrap-Around Search
+70561,179,135,-1.00,3,Wrap-Around Search
+70631,179,135,-1.00,3,Wrap-Around Search
+70700,179,135,-1.00,3,Wrap-Around Search
+70769,179,135,-1.00,3,Wrap-Around Search
+70838,179,135,-1.00,3,Wrap-Around Search
+70907,179,135,-1.00,3,Wrap-Around Search
+70977,179,135,-1.00,3,Wrap-Around Search
+71049,179,135,-1.00,3,Wrap-Around Search
+71118,179,135,-1.00,3,Wrap-Around Search
+71188,179,135,-1.00,3,Wrap-Around Search
+71260,179,135,-1.00,3,Wrap-Around Search
+71329,179,135,-1.00,3,Wrap-Around Search
+71399,179,135,-1.00,3,Wrap-Around Search
+71468,179,135,-1.00,3,Wrap-Around Search
+71537,179,135,-1.00,3,Wrap-Around Search
+71610,179,135,-1.00,3,Wrap-Around Search
+71680,179,135,-1.00,3,Wrap-Around Search
+71748,179,135,-1.00,3,Wrap-Around Search
+71818,179,135,-1.00,3,Wrap-Around Search
+71886,179,135,-1.00,3,Wrap-Around Search
+71956,179,135,-1.00,3,Wrap-Around Search
+72025,179,135,-1.00,3,Wrap-Around Search
+72094,179,135,-1.00,3,Wrap-Around Search
+72164,179,135,-1.00,3,Wrap-Around Search
+72233,179,135,-1.00,3,Wrap-Around Search
+72302,179,135,-1.00,3,Wrap-Around Search
+72372,179,135,-1.00,3,Wrap-Around Search
+72440,179,135,-1.00,3,Wrap-Around Search
+72510,179,135,-1.00,3,Wrap-Around Search
+72579,179,135,-1.00,3,Wrap-Around Search
+72648,179,135,-1.00,3,Wrap-Around Search
+72717,179,135,-1.00,3,Wrap-Around Search
+72786,179,135,-1.00,3,Wrap-Around Search
+72855,179,135,-1.00,3,Wrap-Around Search
+72925,179,135,-1.00,3,Wrap-Around Search
+72994,179,135,-1.00,3,Wrap-Around Search
+73063,179,135,-1.00,3,Wrap-Around Search
+73133,179,135,-1.00,3,Wrap-Around Search
+73202,179,135,-1.00,3,Wrap-Around Search
+73271,179,135,-1.00,3,Wrap-Around Search
+73340,179,135,-1.00,3,Wrap-Around Search
+73409,179,135,-1.00,3,Wrap-Around Search
+73479,179,135,-1.00,3,Wrap-Around Search
+73547,179,135,-1.00,3,Wrap-Around Search
+73617,179,135,-1.00,3,Wrap-Around Search
+73687,179,135,-1.00,3,Wrap-Around Search
+73755,179,135,-1.00,3,Wrap-Around Search
+73825,179,135,-1.00,3,Wrap-Around Search
+73893,179,135,-1.00,3,Wrap-Around Search
+73963,179,135,-1.00,3,Wrap-Around Search
+74032,179,135,-1.00,3,Wrap-Around Search
+74101,179,135,-1.00,3,Wrap-Around Search
+74171,179,135,-1.00,3,Wrap-Around Search
+74240,179,135,-1.00,3,Wrap-Around Search
+74309,179,135,-1.00,3,Wrap-Around Search
+74378,179,135,-1.00,3,Wrap-Around Search
+74447,179,135,-1.00,3,Wrap-Around Search
+74517,179,135,-1.00,3,Wrap-Around Search
+74586,179,135,-1.00,3,Wrap-Around Search
+74655,179,135,-1.00,3,Wrap-Around Search
+74724,179,135,-1.00,3,Wrap-Around Search
+74797,179,135,-1.00,3,Wrap-Around Search
+74866,179,135,-1.00,3,Wrap-Around Search
+74935,179,135,-1.00,3,Wrap-Around Search
+75004,179,135,-1.00,3,Wrap-Around Search
+75073,179,135,-1.00,3,Wrap-Around Search
+75143,179,135,-1.00,3,Wrap-Around Search
