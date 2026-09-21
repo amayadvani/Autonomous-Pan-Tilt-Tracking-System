@@ -35,16 +35,27 @@
             caption: 'Fully assembled Pan-Tilt Tracking System',
             align: 'full'
         },
+    
+        {
+            type: 'viewer',
+            label: 'Final System Assembly',
+            stlPath: '../assembled/Autonomous-Pan-Tilt-Tracking-System-Assembly.stl',
+            colorSeed: 2
+        },
+        {
+            type: 'video',
+            src: '../vids/Shorter Satellite Tracking.mp4',
+            caption: 'Full system demo — tracking a simulated shorter satellite'
+        },
+        {
+            type: 'video',
+            src: '../vids/Taller Satellite Tracking.mp4',
+            caption: 'Full system demo — tracking a simulated taller satellite'
+        },
         {
             type: 'text',
             html: `<p><strong>Demo video:</strong> paste a YouTube/Drive embed &lt;iframe&gt; here,
             or replace this block with a &lt;video&gt; tag pointing to an .mp4 file.</p>`
-        },
-        {
-            type: 'viewer',
-            label: 'Full Assembly (3D)',
-            stlPath: '../assembled/YourFullAssembly.stl',
-            colorSeed: 2
         }
     ]);
 </script>
