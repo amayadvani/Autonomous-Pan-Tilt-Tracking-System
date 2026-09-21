@@ -34,7 +34,8 @@ function renderReportHeader(activeId) {
 //   { type: 'bullets', heading: 'Purpose', items: ['...', '...'] }
 //   { type: 'image', src, caption, align: 'full' (optional) }
 //   { type: 'image-text', src, caption, text: '<p>...</p>', imageSide: 'left'|'right' }
-//   { type: 'image-grid', featureFirst: true/false, images: [{ src, alt, caption }, ...] }  -> multiple photos, uniform grid cells
+//   { type: 'image-grid', featureFirst: true/false, images: [{ src, alt, caption }, ...] }  -> multiple photos, justified row
+//   { type: 'code', label: 'optional title', code: 'raw C++ code as a string' }  -> syntax-highlighted via Prism.js
 //   { type: 'video', src, caption }                    -> direct .mp4 file, e.g. '../vids/demo.mp4'
 //   { type: 'video-embed', embedUrl, caption }          -> YouTube/Drive iframe embed URL
 //   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
@@ -108,6 +109,21 @@ function renderReportContent(rootId, blocks) {
                 </figure>`).join('');
             section.innerHTML = `<div class="report-image-grid">${imagesHtml}</div>`;
             root.appendChild(section);
+
+
+        } else if (block.type === 'code') {
+            const escaped = block.code
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+            section.innerHTML = `
+                ${block.label ? `<h3 class="report-subheading">${block.label}</h3>` : ''}
+                <pre class="report-code"><code class="language-cpp">${escaped}</code></pre>`;
+            root.appendChild(section);
+
+            setTimeout(() => {
+                if (typeof Prism !== 'undefined') Prism.highlightAll();
+            }, 0);
 
 
         } else if (block.type === 'video') {

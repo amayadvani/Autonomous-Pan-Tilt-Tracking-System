@@ -262,7 +262,7 @@ body {
 
 .report-image-grid .report-figure {
     margin: 0;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
 }
 
 .report-image-grid .report-figure img {
@@ -344,4 +344,29 @@ body {
     .report-viewer-canvas {
         height: 320px;
     }
+}
+.report-flowchart {
+    background: var(--bg-darker);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    color: var(--text-light);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    white-space: pre;
+}
+.report-code {
+    background: #1d1f21;
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.report-code code {
+    font-family: 'Courier New', monospace;
 }

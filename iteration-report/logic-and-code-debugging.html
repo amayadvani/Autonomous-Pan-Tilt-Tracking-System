@@ -6,6 +6,7 @@
 <title>Logic and Code Debugging — Design Iteration Report</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/report-style.css">
 </head>
 <body>
@@ -16,6 +17,8 @@
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/STLLoader.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
 
 <script src="../cad_viewer.js"></script>
 <script src="js/report-common.js"></script>
@@ -25,25 +28,521 @@
     renderReportContent('content-root', [
         { type: 'page-title', text: 'Logic and Code Debugging' },
         {
+    type: 'text',
+    html: `<p>The control software is a finite state machine written in embedded C++ for an Arduino, managing two servos (pan and tilt) and an HC-SR04 ultrasonic sensor. On paper, the logic is simple:</p>
+    <pre class="report-flowchart">
+[Scan full field of view]
+        |
+        v
+[Find target]
+        |
+        v
+[Hold on target] &lt;------------------+
+        |                             |
+        v                             |
+   Target lost? -- No ----------------+
+        |
+       Yes
+        |
+        v
+[Search for target] ----------------+
+        |                           |
+        v                           |
+   Target found? -- No -------------+  (keep searching)
+        |
+       Yes
+        |
+        v
+   back to [Hold on target]
+
+(Repeat continuously)
+    </pre>`
+},
+        {
+    type: 'bullets',
+    heading: 'Key logic problems encountered during development:',
+    items: [
+        '<strong>The endpoint problem.</strong> When the pan servo reached the edge of its range at 1°, it had to wrap to 179° and resume searching from there. A single noisy reading at that moment could convince the system it had found the target, sending it sweeping across the entire 180° range for no reason. This was fixed by requiring the system to confirm a target at the endpoint before letting it search again, instead of reacting to one reading. It took several rewrites before this held up under repeated testing.',
+        '<strong>Sensor noise versus actual target loss.</strong> The HC-SR04 does not produce a clean signal. Readings flickered between valid and invalid even when the target hadn\'t moved, making any single sample unreliable. This was fixed by requiring several consecutive readings to agree before treating a change as real.',
+        '<strong>A floating-point comparison bug.</strong> One version of the code quietly produced incorrect behavior because of how it compared floating-point distance values. I only found it by tracing the raw logged data against the expected state transitions. The fix was correcting the comparison to properly account for floating-point precision.',
+        '<strong>Timing and settle delays.</strong> Several apparent logic errors were actually timing problems: the code read the sensor before the servo finished moving. This was fixed by adding settle delays after each servo command.'
+    ]
+},
+{ type: 'heading', text: 'Debugging process:' },
+        {
             type: 'text',
-            html: `<p> The control software is a finite state machine written in embedded C++ for an Arduino, 
-                managing two servos (pan and tilt) and an HC-SR04 ultrasonic sensor. On paper, the logic is simple:
-                
-                Scan the full field of view → find the target → hold on it → if lost, search for it → repeat.
-                
-                </p>`
+            html: `<p>Rather than debugging blind, every version of the firmware logged 
+                structured serial data (timestamp, pan angle, tilt angle, distance reading,
+                and current state) for every loop iteration. I could see the log and point 
+                out where the exact line the state transitioned incorrectly and 
+                work backward to the responsible code.</p>`
         },
         {
-            type: 'image',
-            src: 'images/tracking-logic-flowchart.png',
-            caption: 'Signal-tracking control flow',
-            align: 'full'
-        },
-        {
             type: 'text',
-            html: `<p>Use additional text blocks to describe specific bugs you hit and how you
-            fixed them.</p>`
-        }
+            html: `<p> I used an AI assistant as a debugging collaborator throughout this 
+                process, but treated its suggestions the same way I treated my own: as claims 
+                to verify against the log data, not answers to accept outright. Several proposed 
+                fixes were rejected or reworked after checking them against actual serial output. 
+                That verification step was consistently the fastest way to find the real root cause</p>`
+        },
+
+        {
+    type: 'code',
+    label: 'Final Tracking Algorithm',
+    code: `#include <Servo.h>
+
+// ============================================================
+// PINS
+// ============================================================
+const byte SERVO1_PIN = 11;  // Pan servo
+const byte SERVO2_PIN = 9;   // Tilt servo
+const byte TRIG_PIN = 2;     // HC-SR04 TRIG
+const byte ECHO_PIN = 3;     // HC-SR04 ECHO
+
+// ============================================================
+// SERVO LIMITS
+// ============================================================
+const int SERVO1_MIN = 1;
+const int SERVO1_MAX = 179;
+
+const int SERVO2_MIN = 75;
+const int SERVO2_MAX = 135;
+
+const int SERVO1_HOME = 90;
+const int SERVO2_HOME = 105;
+
+// ============================================================
+// VALID HC-SR04 RANGE
+// ============================================================
+const float MIN_VALID_DISTANCE_CM = 3.0;
+const float MAX_VALID_DISTANCE_CM = 15.0;
+
+// ============================================================
+// INITIAL ONE-TIME SWEEP
+// ============================================================
+const int SCAN_PAN_STEP = 15;
+const int SCAN_TILT_STEP = 10;
+const int SCAN_SETTLE_MS = 100;
+
+const int RETURN_SETTLE_MS = 100;
+
+// ============================================================
+// CLOCKWISE TRACKING
+// ============================================================
+const int CLOCKWISE_PAN_DIRECTION = -1;
+const int REACQUIRE_PAN_STEP = 1;
+const int REACQUIRE_SETTLE_MS = 60;
+
+const byte CONSECUTIVE_READS_REQUIRED = 3;
+
+// ============================================================
+// STATES
+// ============================================================
+enum TrackerState {
+  HOLD_TARGET,
+  STEP_TO_REACQUIRE,
+  WAIT_FOR_VALID_AT_179,
+  HOLD_CONFIRMED_AT_179
+};
+
+// ============================================================
+// OBJECTS AND STATE VARIABLES
+// ============================================================
+Servo servo1;
+Servo servo2;
+
+int panAngle = SERVO1_HOME;
+int tiltAngle = SERVO2_HOME;
+int lockedTilt = SERVO2_HOME;
+
+float currentDistance = -1.0;
+
+bool initialScanComplete = false;
+bool targetLocked = false;
+
+byte endpointValidStreak = 0;
+byte endpointLostStreak = 0;
+
+TrackerState trackerState = HOLD_TARGET;
+
+// ============================================================
+// SERVO HELPERS
+// ============================================================
+void movePan(int angle) {
+  panAngle = constrain(angle, SERVO1_MIN, SERVO1_MAX);
+  servo1.write(panAngle);
+}
+
+void moveTilt(int angle) {
+  tiltAngle = constrain(angle, SERVO2_MIN, SERVO2_MAX);
+  servo2.write(tiltAngle);
+}
+
+// ============================================================
+// HC-SR04 DISTANCE
+// ============================================================
+float readDistanceCM() {
+  digitalWrite(TRIG_PIN, LOW);
+  delayMicroseconds(2);
+
+  digitalWrite(TRIG_PIN, HIGH);
+  delayMicroseconds(10);
+
+  digitalWrite(TRIG_PIN, LOW);
+
+  unsigned long duration = pulseIn(ECHO_PIN, HIGH, 30000);
+
+  if (duration == 0) {
+    return -1.0;
+  }
+
+  float distance = duration / 58.0;
+
+  if (distance < MIN_VALID_DISTANCE_CM ||
+      distance > MAX_VALID_DISTANCE_CM) {
+    return -1.0;
+  }
+
+  return distance;
+}
+
+// ============================================================
+// SERIAL OUTPUT
+// ============================================================
+
+void printData(float distance, int state) {
+  Serial.print(millis());
+  Serial.print(",");
+  Serial.print(panAngle);
+  Serial.print(",");
+  Serial.print(tiltAngle);
+  Serial.print(",");
+  Serial.print(distance, 2);
+  Serial.print(",");
+  Serial.println(state);
+}
+
+// ============================================================
+// INITIAL SWEEP: COMPLETE GRID, KEEP TRUE SMALLEST DISTANCE
+// ============================================================
+void runInitialScan() {
+  float shortestDistance = 9999.0;
+  int bestPan = SERVO1_HOME;
+  int bestTilt = SERVO2_HOME;
+
+  for (int tilt = SERVO2_MIN;
+       tilt <= SERVO2_MAX;
+       tilt += SCAN_TILT_STEP) {
+
+    for (int pan = SERVO1_MIN;
+         pan <= SERVO1_MAX;
+         pan += SCAN_PAN_STEP) {
+
+      movePan(pan);
+      moveTilt(tilt);
+      delay(SCAN_SETTLE_MS);
+
+      float distance = readDistanceCM();
+      printData(distance, 0);
+      delay(60);
+
+      if (distance > 0.0 && distance < shortestDistance) {
+        shortestDistance = distance;
+        bestPan = pan;
+        bestTilt = tilt;
+      }
+    }
+  }
+
+  initialScanComplete = true;
+
+  if (shortestDistance == 9999.0) {
+    targetLocked = false;
+    movePan(SERVO1_HOME);
+    moveTilt(SERVO2_HOME);
+    Serial.println("NO_VALID_TARGET_IN_INITIAL_SCAN");
+    return;
+  }
+
+  movePan(bestPan);
+  moveTilt(bestTilt);
+  delay(RETURN_SETTLE_MS);
+
+  float confirmDistance = readDistanceCM();
+  printData(confirmDistance, 5);
+  delay(60);
+
+  lockedTilt = bestTilt;
+
+  if (confirmDistance > 0.0) {
+    currentDistance = confirmDistance;
+  } else {
+
+    currentDistance = shortestDistance;
+  }
+
+  targetLocked = true;
+  trackerState = HOLD_TARGET;
+
+  Serial.print("INITIAL_SHORTEST_LOCK,");
+  Serial.print(bestPan);
+  Serial.print(",");
+  Serial.print(bestTilt);
+  Serial.print(",scan_value=");
+  Serial.print(shortestDistance, 2);
+  Serial.print(",confirmed_value=");
+  Serial.println(currentDistance, 2);
+}
+
+// ============================================================
+// STATE: HOLD TARGET AT NORMAL PAN ANGLE
+// ============================================================
+void holdTarget() {
+  movePan(panAngle);
+  moveTilt(lockedTilt);
+
+  float distance = readDistanceCM();
+  printData(distance, 1);
+  delay(60);
+
+  if (distance > 0.0) {
+    currentDistance = distance;
+    return;
+  }
+
+  trackerState = STEP_TO_REACQUIRE;
+  Serial.println("TARGET_LOST_START_1_DEGREE_STEPPING");
+}
+
+// ============================================================
+// STATE: STEP CLOCKWISE (-1) TO REACQUIRE
+// ============================================================
+void stepClockwiseToReacquire() {
+  moveTilt(lockedTilt);
+
+  float distance = readDistanceCM();
+  printData(distance, 2);
+  delay(60);
+
+  if (distance > 0.0) {
+    currentDistance = distance;
+    trackerState = HOLD_TARGET;
+    Serial.println("TARGET_REACQUIRED_HOLDING");
+    return;
+  }
+
+  int nextPan = panAngle +
+                (CLOCKWISE_PAN_DIRECTION * REACQUIRE_PAN_STEP);
+
+  if (nextPan < SERVO1_MIN) {
+    movePan(SERVO1_MAX);
+    moveTilt(lockedTilt);
+    panAngle = SERVO1_MAX;
+
+    endpointValidStreak = 0;
+    endpointLostStreak = 0;
+
+    trackerState = WAIT_FOR_VALID_AT_179;
+    Serial.println("WRAP_TO_179_WAITING_FOR_VALID");
+    return;
+  }
+
+  movePan(nextPan);
+  moveTilt(lockedTilt);
+  delay(REACQUIRE_SETTLE_MS);
+}
+
+// ============================================================
+// STATE: WAIT AT 179° FOR CONSECUTIVE VALID READINGS
+// ============================================================
+void waitForValidAt179() {
+  movePan(SERVO1_MAX);
+  moveTilt(lockedTilt);
+
+  float distance = readDistanceCM();
+  printData(distance, 3);
+  delay(60);
+
+  if (distance < 0.0) {
+    endpointValidStreak = 0;
+    return;
+  }
+
+  endpointValidStreak++;
+  currentDistance = distance;
+
+  Serial.print("ENDPOINT_VALID_STREAK,");
+  Serial.println(endpointValidStreak);
+
+  if (endpointValidStreak < CONSECUTIVE_READS_REQUIRED) {
+    return;
+  }
+
+  panAngle = SERVO1_MAX;
+  endpointValidStreak = 0;
+  endpointLostStreak = 0;
+  trackerState = HOLD_CONFIRMED_AT_179;
+
+  Serial.println("TARGET_VALID_AT_179_CONFIRMED_HOLD");
+}
+
+// ============================================================
+// STATE: CONFIRMED HOLD AT 179°
+// ============================================================
+void holdConfirmedAt179() {
+  movePan(SERVO1_MAX);
+  moveTilt(lockedTilt);
+
+  float distance = readDistanceCM();
+  printData(distance, 4);
+  delay(60);
+
+  if (distance > 0.0) {
+    currentDistance = distance;
+    endpointLostStreak = 0;
+    return;
+  }
+
+  endpointLostStreak++;
+
+  Serial.print("ENDPOINT_LOST_STREAK,");
+  Serial.println(endpointLostStreak);
+
+  if (endpointLostStreak < CONSECUTIVE_READS_REQUIRED) {
+    return;
+  }
+
+  panAngle = SERVO1_MAX;
+  endpointLostStreak = 0;
+  trackerState = STEP_TO_REACQUIRE;
+
+  Serial.println("TARGET_LEFT_179_START_1_DEGREE_STEPPING");
+}
+
+// ============================================================
+// SETUP
+// ============================================================
+void setup() {
+  Serial.begin(115200);
+
+  servo1.attach(SERVO1_PIN);
+  servo2.attach(SERVO2_PIN);
+
+  pinMode(TRIG_PIN, OUTPUT);
+  pinMode(ECHO_PIN, INPUT);
+
+  movePan(SERVO1_HOME);
+  moveTilt(SERVO2_HOME);
+
+  delay(1000);
+
+  Serial.println("TimeMS,PanAngle,TiltAngle,DistanceCM,State");
+}
+
+// ============================================================
+// MAIN LOOP
+// ============================================================
+void loop() {
+  if (!initialScanComplete) {
+    runInitialScan();
+    return;
+  }
+
+  if (!targetLocked) {
+    return;
+  }
+
+  if (trackerState == HOLD_TARGET) {
+    holdTarget();
+    return;
+  }
+
+  if (trackerState == STEP_TO_REACQUIRE) {
+    stepClockwiseToReacquire();
+    return;
+  }
+
+  if (trackerState == WAIT_FOR_VALID_AT_179) {
+    waitForValidAt179();
+    return;
+  }
+
+  if (trackerState == HOLD_CONFIRMED_AT_179) {
+    holdConfirmedAt179();
+  }
+}`
+},
+{
+    type: 'code',
+    label: 'Motor Control Code',
+    code: `#include <AccelStepper.h>
+
+// ==================================================
+// ULN2003 STEPPER DRIVER PINS
+// ==================================================
+const byte IN1_PIN = 3;
+const byte IN2_PIN = 4;
+const byte IN3_PIN = 5;
+const byte IN4_PIN = 6;
+
+// ==================================================
+// POTENTIOMETER PIN
+// ==================================================
+const byte POT_PIN = A0;
+
+// ==================================================
+// MOTOR SETTINGS
+// ==================================================
+
+const float MAX_SPEED = 1500.0;
+
+const int DEAD_BAND = 35;
+
+AccelStepper stepper(
+  AccelStepper::HALF4WIRE,
+  IN1_PIN,
+  IN3_PIN,
+  IN2_PIN,
+  IN4_PIN
+);
+
+// ==================================================
+// SETUP
+// ==================================================
+void setup() {
+  stepper.setMaxSpeed(MAX_SPEED);
+
+  Serial.begin(9600);
+}
+
+// ==================================================
+// MAIN LOOP
+// ==================================================
+void loop() {
+  int potValue = analogRead(POT_PIN);
+  int centeredValue = potValue - 512;
+  float targetSpeed = 0.0;
+  if (abs(centeredValue) > DEAD_BAND) {
+
+    if (centeredValue > 0) {
+      targetSpeed =
+        (float)(centeredValue - DEAD_BAND) *
+        MAX_SPEED /
+        (511 - DEAD_BAND);
+
+    } else {
+      targetSpeed =
+        (float)(centeredValue + DEAD_BAND) *
+        MAX_SPEED /
+        (512 - DEAD_BAND);
+    }
+  }
+
+  stepper.setSpeed(targetSpeed);
+  stepper.runSpeed();
+
+}`
+}
     ]);
 </script>
 </body>

@@ -28,25 +28,14 @@
             type: 'text',
             html: `<p>The physical mount went through many CAD revisions, 
                 and just as many print attempts, because I was learning the 
-                constraints of both the CAD software and my 3D printer at the 
-                same time as I was designing the part.
-                
-                
-                Early iterations looked correct on screen but failed the moment 
-                they came off the printer; bores that didn't line up, tolerances 
-                so tight the servo horn wouldn't seat, print orientations that 
-                caused a critical mounting face to warp or need supports it couldn't 
-                be cleaned off.
-                
-                Tolerances that work fine in a CAD assembly simulation don't always 
-                survive layer adhesion, printer calibration drift, or material shrinkage. 
-                Getting the pan/tilt bracket to a point where it held the servos rigidly, 
-                without binding their range of motion, took multiple full print cycles before 
-                it was usable.</p>`
+                constraints of both the slicer software and my 3D printer at the 
+                same time as I was designing the part. Getting the pan/tilt bracket 
+                to a point where it held the servos rigidly, without binding their
+                range of motion, took multiple full print cycles before it was usable.</p>`
         },
         {
             type: 'text',
-            html: `<h3 class="report-subheading">Each iteration meant:/h3>
+            html: `<h3 class="report-subheading">Each iteration meant:</h3>
             <ul class="report-bullets">
             <li><strong>1. </strong> Adjust the model in CAD based on what the last print got wrong.</li>
             <li><strong>2. </strong> Re-slice and re-print.</li>
@@ -54,6 +43,18 @@
             <li><strong>4. </strong> Find the next thing that was wrong, and repeat.</li>
             </ul>`
         },
+        {
+    type: 'bullets',
+    heading: 'What went wrong',
+    items: [
+        'Unaligned bores.',
+        'Unconsistent tolerances.',
+        'Print orientations that caused a mounting face to warp or need supports.',
+        'Layer adhesion issues.',
+        'Material shrinkage.',
+        'Strength issues with thin walls.'
+    ]
+},
         { type: 'heading', text: 'Gimbal Base: Most Variable Design' },
         {
           type: 'image-grid',

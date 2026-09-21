@@ -99,39 +99,22 @@
             type: 'text',
             html: `<p> Conclusion : Each of these three pieces is looking at a different layer of the same setup. The distance-vs-signal graphs show that the falloff is significant. a sound pulse and a radio wave both spread out and weaken the same way as they travel, so scaling the ultrasonic echo data onto a log-distance axis produces the exact slope a satellite link would, just over centimeters instead of thousands of kilometers. The reproducibility test shows that running the same 84-cell scan twice and getting the same bearing both times means the search-and-lock loop convergeson it the same way a step-track antenna controller has to in order to stay useful.The slew rate, detection window, and hold jitter numbers are the part that surprised me most, since none of them were picked to line up with anything — they just happened to land in the same range as published figures for real LEO ground-station hardware once I went back and pulled them out of the timestamps.</p>`
         },
-        { type: 'heading', text: 'Works Cited'},
-        {
-            type: 'text',
-            html: `<p>
-         
-For Analysis 1 (distance vs. signal strength):
-
-NXP Semiconductors. GPS, LNA, Sensitivity, Jamming, Cohabitation, TTFF. NXP, www.nxp.com/docs/en/brochure/75016740.pdf.
-
-"What Is a Link Budget?" MathWorks, www.mathworks.com/discovery/link-budget.html.
-
-"RF Free Space Path Loss Measurement Calculators." Pasternack, www.pasternack.com/t-calculator-fspl.aspx.
-
-For Analysis 2 (step-track / reproducibility):
-
-"11.0 Ground Data Systems and Mission Operations." NASA Small Satellite Institute, NASA, 18 May 2026, www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/.
-
-"CONSCAN Implementation for Antenna Control Assembly." NASA Technical Reports Server, NASA, ntrs.nasa.gov/api/citations/19820024669/downloads/19820024669.pdf.
-
-"An Analysis of Conical Scan Antennas for Tracking." IEEE Xplore, IEEE, ieeexplore.ieee.org/iel6/8242/25873/01150441.pdf.
-
-"Conical-Scan Tracking with the 64-m-Diameter Antenna at Goldstone." Calhoun: NPS Institutional Archive, Naval Postgraduate School, Oct. 1976, calhoun.nps.edu/server/api/core/bitstreams/f22d9ca5-ad47-44bf-9b2b-378306fbf7e5/content.
-
-For Analysis 3 (slew rate, beamwidth, jitter):
-
-"Low-Cost Azimuth and Elevation Antenna Rotator for LEO Satellite Tracking." ScienceDirect, Elsevier, www.sciencedirect.com/science/article/abs/pii/S2214785322009270.
-
-"Selecting a Pedestal for Tracking LEO Satellites at Ka Band." Microwave Journal, 1 Apr. 2000, www.microwavejournal.com/articles/2937-selecting-a-pedestal-for-tracking-leo-satellites-at-ka-band.
-
-"Improving Conical Scanning for Satellite Tracking On-The-Move." Caltech Authors Library, California Institute of Technology, authors.library.caltech.edu/42630/1/Karol_2012.pdf.
-
-</p>`
-        },
+       {
+    type: 'bullets',
+    heading: 'Works Cited',
+    items: [
+        'NXP Semiconductors. GPS, LNA, Sensitivity, Jamming, Cohabitation, TTFF. NXP, <a href="https://www.nxp.com/docs/en/brochure/75016740.pdf">www.nxp.com/docs/en/brochure/75016740.pdf</a>.',
+        '"What Is a Link Budget?" MathWorks, <a href="https://www.mathworks.com/discovery/link-budget.html">www.mathworks.com/discovery/link-budget.html</a>.',
+        '"RF Free Space Path Loss Measurement Calculators." Pasternack, <a href="https://www.pasternack.com/t-calculator-fspl.aspx">www.pasternack.com/t-calculator-fspl.aspx</a>.',
+        '"11.0 Ground Data Systems and Mission Operations." NASA Small Satellite Institute, NASA, 18 May 2026, <a href="https://www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/">www.nasa.gov/smallsat-institute/sst-soa/ground-data-systems-and-mission-operations/</a>.',
+        '"CONSCAN Implementation for Antenna Control Assembly." NASA Technical Reports Server, NASA, <a href="https://ntrs.nasa.gov/api/citations/19820024669/downloads/19820024669.pdf">ntrs.nasa.gov/api/citations/19820024669/downloads/19820024669.pdf</a>.',
+        '"An Analysis of Conical Scan Antennas for Tracking." IEEE Xplore, IEEE, <a href="https://ieeexplore.ieee.org/iel6/8242/25873/01150441.pdf">ieeexplore.ieee.org/iel6/8242/25873/01150441.pdf</a>.',
+        '"Conical-Scan Tracking with the 64-m-Diameter Antenna at Goldstone." Calhoun: NPS Institutional Archive, Naval Postgraduate School, Oct. 1976, <a href="https://calhoun.nps.edu/server/api/core/bitstreams/f22d9ca5-ad47-44bf-9b2b-378306fbf7e5/content">calhoun.nps.edu/server/api/core/bitstreams/f22d9ca5-ad47-44bf-9b2b-378306fbf7e5/content</a>.',
+        '"Low-Cost Azimuth and Elevation Antenna Rotator for LEO Satellite Tracking." ScienceDirect, Elsevier, <a href="https://www.sciencedirect.com/science/article/abs/pii/S2214785322009270">www.sciencedirect.com/science/article/abs/pii/S2214785322009270</a>.',
+        '"Selecting a Pedestal for Tracking LEO Satellites at Ka Band." Microwave Journal, 1 Apr. 2000, <a href="https://www.microwavejournal.com/articles/2937-selecting-a-pedestal-for-tracking-leo-satellites-at-ka-band">www.microwavejournal.com/articles/2937-selecting-a-pedestal-for-tracking-leo-satellites-at-ka-band</a>.',
+        '"Improving Conical Scanning for Satellite Tracking On-The-Move." Caltech Authors Library, California Institute of Technology, <a href="https://authors.library.caltech.edu/42630/1/Karol_2012.pdf">authors.library.caltech.edu/42630/1/Karol_2012.pdf</a>.'
+    ]
+}
     ]);
 </script>
 </body>
