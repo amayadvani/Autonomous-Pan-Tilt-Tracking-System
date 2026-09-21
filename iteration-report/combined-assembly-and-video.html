@@ -24,19 +24,7 @@
 
     renderReportContent('content-root', [
         { type: 'page-title', text: 'Combined Assembly and Video' },
-        {
-            type: 'text',
-            html: `<p>Goal: Build a fully autonomous pan-tilt tracking system, from scratch, 
-                that can locate a physical target using nothing but an ultrasonic distance 
-                sensor and two servo motors, and hold on it as it moves.</p>`
-        },
-        {
-            type: 'viewer',
-            label: 'Final System Assembly',
-            stlPath: '../assembled/Autonomous-Pan-Tilt-Tracking-System-Assembly.stl',
-            colorSeed: 3
-        },
-        {
+       {
             type: 'text',
             html: `<h3 class="report-subheading">Automation Requirements: with no manual input after power-on</h3>
             <ul class="report-bullets">
@@ -44,6 +32,12 @@
             <li><strong>2. </strong> Hold on the target as long as it stayed in range.</li>
             <li><strong>3. </strong> A simple ultrasonic range finder, simulating satellite distance as signal strength.</li>
             </ul>`
+        },
+        {
+            type: 'viewer',
+            label: 'Final System Assembly',
+            stlPath: '../assembled/Autonomous-Pan-Tilt-Tracking-System-Assembly.stl',
+            colorSeed: 3
         },
         {
             type: 'video',
@@ -60,6 +54,7 @@
     label: 'Full Scan Log (Raw Data)',
     src: '../graphs/full_scan_log_raw.csv'
 },
+{ type: 'heading', text: 'Key Design considerations for Motion:' },
         {
             type: 'image',
             src: '../assembled/axel+gimbal_connection.jpeg',
