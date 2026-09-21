@@ -5,14 +5,17 @@ const REPORT_PAGES = [
     { id: 'logic', label: 'Logic and Code Debugging', href: 'logic-and-code-debugging.html' }
 ];
 
+
 function renderReportHeader(activeId) {
     const header = document.getElementById('site-header');
     if (!header) return;
+
 
     const navHtml = REPORT_PAGES.map(p => {
         const activeClass = p.id === activeId ? ' active' : '';
         return `<a class="report-nav-btn${activeClass}" href="${p.href}">${p.label}</a>`;
     }).join('');
+
 
     header.innerHTML = `
         <div class="report-title-rule"></div>
@@ -23,6 +26,7 @@ function renderReportHeader(activeId) {
     `;
 }
 
+
 // blocks: array of objects, each one of:
 //   { type: 'page-title', text: '...' }
 //   { type: 'heading', text: '...' }
@@ -30,6 +34,7 @@ function renderReportHeader(activeId) {
 //   { type: 'bullets', heading: 'Purpose', items: ['...', '...'] }
 //   { type: 'image', src, caption, align: 'full' (optional) }
 //   { type: 'image-text', src, caption, text: '<p>...</p>', imageSide: 'left'|'right' }
+//   { type: 'image-grid', featureFirst: true/false, images: [{ src, alt, caption }, ...] }  -> multiple photos, uniform grid cells
 //   { type: 'video', src, caption }                    -> direct .mp4 file, e.g. '../vids/demo.mp4'
 //   { type: 'video-embed', embedUrl, caption }          -> YouTube/Drive iframe embed URL
 //   { type: 'viewer', stlPath, label, colorSeed, color (optional hex, overrides colorSeed) }
@@ -38,7 +43,9 @@ function renderReportContent(rootId, blocks) {
     if (!root) return;
     root.innerHTML = '';
 
+
     blocks.forEach((block, idx) => {
+
 
         if (block.type === 'page-title') {
             const titleEl = document.createElement('h2');
@@ -48,16 +55,20 @@ function renderReportContent(rootId, blocks) {
             return;
         }
 
+
         const section = document.createElement('section');
         section.className = 'report-block report-block-' + block.type;
+
 
         if (block.type === 'heading') {
             section.innerHTML = `<h2>${block.text}</h2>`;
             root.appendChild(section);
 
+
         } else if (block.type === 'text') {
             section.innerHTML = block.html;
             root.appendChild(section);
+
 
         } else if (block.type === 'bullets') {
             const itemsHtml = block.items.map(item => `<li>${item}</li>`).join('');
@@ -66,6 +77,7 @@ function renderReportContent(rootId, blocks) {
                 <ul class="report-bullets">${itemsHtml}</ul>`;
             root.appendChild(section);
 
+
         } else if (block.type === 'image') {
             section.innerHTML = `
                 <figure class="report-figure ${block.align || ''}">
@@ -73,6 +85,7 @@ function renderReportContent(rootId, blocks) {
                     ${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}
                 </figure>`;
             root.appendChild(section);
+
 
         } else if (block.type === 'image-text') {
             const sideClass = block.imageSide === 'right' ? 'image-right' : 'image-left';
@@ -86,6 +99,17 @@ function renderReportContent(rootId, blocks) {
                 </div>`;
             root.appendChild(section);
 
+
+        } else if (block.type === 'image-grid') {
+            const imagesHtml = block.images.map((img, i) => `
+                <figure class="report-figure ${i === 0 && block.featureFirst ? 'grid-feature' : ''}">
+                    <img src="${img.src}" alt="${img.alt || img.caption || ''}" loading="lazy">
+                    ${img.caption ? `<figcaption>${img.caption}</figcaption>` : ''}
+                </figure>`).join('');
+            section.innerHTML = `<div class="report-image-grid">${imagesHtml}</div>`;
+            root.appendChild(section);
+
+
         } else if (block.type === 'video') {
             section.innerHTML = `
                 <figure class="report-figure report-video-figure">
@@ -97,6 +121,7 @@ function renderReportContent(rootId, blocks) {
                 </figure>`;
             root.appendChild(section);
 
+
         } else if (block.type === 'video-embed') {
             section.innerHTML = `
                 <figure class="report-figure report-video-figure">
@@ -107,6 +132,7 @@ function renderReportContent(rootId, blocks) {
                 </figure>`;
             root.appendChild(section);
 
+
         } else if (block.type === 'viewer') {
             const viewerId = `report-viewer-${idx}-${Math.random().toString(36).slice(2)}`;
             section.innerHTML = `
@@ -114,9 +140,11 @@ function renderReportContent(rootId, blocks) {
                 <div id="${viewerId}" class="report-viewer-canvas"></div>`;
             root.appendChild(section);
 
+
             setTimeout(() => {
                 const container = document.getElementById(viewerId);
                 if (!container) return;
+
 
                 if (typeof CADViewer !== 'undefined') {
                     const viewer = new CADViewer(container, block.colorSeed ?? idx, block.color ?? null);

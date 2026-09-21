@@ -31,14 +31,14 @@
             for every part you want to document.</p>`
         },
 
-        { type: 'heading', text: 'Part: V4 Bar (Motor Version)' },
+        { type: 'heading', text: 'Base: Largest Designed component' },
         {
-            type: 'image-text',
-            src: 'images/v4-bar-v1-sketch.png',
-            caption: 'Version 1 sketch/concept',
-            imageSide: 'left',
-            text: `<p>Describe the first iteration of this part: initial requirements, materials,
-            and any early failures or limitations that led to a redesign.</p>`
+          type: 'image-grid',
+          featureFirst: true,
+          images: [
+            { src: '../sensor base/failed sensor base.jpeg', caption: 'Failed sensor base' },
+            { src: '../sensor base/gear closeup.jpeg', caption: 'Gearcloseup' },
+            { src: '../sensor base/warped.jpg', caption: 'Warped Base' }]
         },
         {
             type: 'viewer',
